@@ -1,5 +1,5 @@
 /* ============================================================
-   CrossBridge AI · 共享视觉规范（静态原型）
+   桥通售后 · 共享视觉规范（静态原型）
    设计令牌与组件样式 —— 与 docs/01_产品原型与UI设计方案.md 对应
    ============================================================ */
 
@@ -908,3 +908,4 @@ a:focus-visible, button:focus-visible, .pill:focus-visible, .scene-card:focus-vi
   .quick-card b { font-size: 12.5px; }
   .quick-card span { font-size: 10.5px; }
 }
+

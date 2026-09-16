@@ -27,7 +27,7 @@
     email: "tag-blue", negotiation: "tag-purple", meeting: "tag-cyan", customer: "tag-gray", daily: "tag-gray"
   };
   var SCENE_ZH = {
-    email: "商务邮件", negotiation: "商务谈判", meeting: "国际会议", customer: "客户沟通", daily: "日常交流", general: "一般沟通"
+    email: "商务邮件", negotiation: "描述不符", meeting: "国际会议", customer: "客户沟通", daily: "日常交流", general: "一般沟通"
   };
 
   function esc(s) {
@@ -636,4 +636,5 @@
     RISK_BADGE: RISK_BADGE
   };
 })();
+
 

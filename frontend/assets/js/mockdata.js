@@ -1,5 +1,5 @@
 /* ============================================================
-   CrossBridge AI · 内置离线演示数据（后端不可用时的降级数据）
+   桥通售后 · 内置离线演示数据（后端不可用时的降级数据）
    与后端 data/cross_culture_cases.json 的案例保持一致（精选 8 条）
    ============================================================ */
 
@@ -48,7 +48,7 @@ window.CB_MOCK = {
         },
         {
           "key": "negotiation",
-          "name": "商务谈判型",
+          "name": "描述不符型",
           "suited_for": "明确提出需求、保持专业",
           "regions": "美国 / 欧洲",
           "optimized": "We value our cooperation and would like to move forward with this order. Given our projected order volume of [数量], could you kindly consider a 10% adjustment? We believe this would support a long-term partnership. We would appreciate your kind consideration and look forward to your favorable reply."
@@ -76,7 +76,7 @@ window.CB_MOCK = {
         },
         {
           "key": "negotiation",
-          "name": "商务谈判型",
+          "name": "描述不符型",
           "suited_for": "明确提出需求、保持专业",
           "regions": "美国 / 欧洲",
           "optimized": "Dear Mr. Sato,\n\nThank you for your quotation. We appreciate the detailed breakdown. However, the price is higher than our budget expectations. Would you be able to consider a more favorable rate, given our order volume?\n\nBest regards,\nZhang Wei We would appreciate your kind consideration and look forward to your favorable reply."
@@ -102,7 +102,7 @@ window.CB_MOCK = {
     {
       "id": "EM-002",
       "scenario": "email",
-      "sub_scene": "报价回复",
+      "sub_scene": "商品质量",
       "original_expression": "We have received your quotation, but your price is too expensive. Please give us a better price.",
       "problem_analysis": "① 搭配不地道：商务语境评价价格更常用 'above our budget' / 'beyond our expectation'，'expensive' 偏口语且语气过重。② 'too expensive' 是强烈否定，暗含'你报价不合理'的指责；③ 'give us a better price' 是直接索取式请求，缺少肯定、理由与感谢。",
       "risk_level": "medium_high",
@@ -152,7 +152,7 @@ window.CB_MOCK = {
   "culture": "japan",
   "culture_label": "日本",
   "business_scene": "negotiation",
-  "business_scene_label": "商务谈判",
+  "business_scene_label": "描述不符",
   "reasoning": {
     "keywords": [
       {
@@ -224,7 +224,7 @@ window.CB_MOCK = {
   {
     "id": "EM-002",
     "scenario": "email",
-    "sub_scene": "报价回复",
+    "sub_scene": "商品质量",
     "original_expression": "We have received your quotation, but your price is too expensive. Please give us a better price.",
     "problem_analysis": "① 搭配不地道：商务语境评价价格更常用 'above our budget' / 'beyond our expectation'，'expensive' 偏口语且语气过重。② 'too expensive' 是强烈否定，暗含'你报价不合理'的指责；③ 'give us a better price' 是直接索取式请求，缺少肯定、理由与感谢。",
     "risk_level": "medium_high",
@@ -496,7 +496,7 @@ window.CB_MOCK = {
   {
     "id": "NG-001",
     "scenario": "negotiation",
-    "sub_scene": "报价谈判",
+    "sub_scene": "物流延误",
     "original_expression": "Your price is unacceptable. We will find another supplier.",
     "problem_analysis": "① 'unacceptable' 直接否定对方全部报价，语气激烈；② 'find another supplier' 是威胁式施压，等于关闭谈判桌；③ 未给出期望价格与理由，谈判无法继续。",
     "risk_level": "high",
@@ -969,7 +969,7 @@ window.CB_MOCK = {
   {
     "id": "CU-004",
     "scenario": "customer",
-    "sub_scene": "客户投诉",
+    "sub_scene": "退款争议",
     "original_expression": "You should have told us earlier.",
     "problem_analysis": "① 指责客户（should have），把责任推给客户；② 客户沟通中指责客户是大忌；③ 未关注问题本身如何解决。",
     "risk_level": "medium_high",
@@ -1194,8 +1194,8 @@ window.CB_MOCK = {
     {
       "id": "CMP-002",
       "scene": "negotiation",
-      "scene_label": "商务谈判",
-      "title": "报价谈判",
+      "scene_label": "描述不符",
+      "title": "物流延误",
       "risk_focus": "威胁式施压与关闭谈判",
       "original": "Your price is unacceptable. We will find another supplier.",
       "optimized": "We value our cooperation. However, the current price exceeds our budget. Could you kindly share how the price is structured? We would like to explore a solution that works for both sides.",
@@ -1362,7 +1362,7 @@ window.CB_MOCK = {
     {
       "id": "CMP-006",
       "scene": "negotiation",
-      "scene_label": "商务谈判",
+      "scene_label": "描述不符",
       "title": "压价威胁",
       "risk_focus": "最后通牒式威胁",
       "original": "Give us a 15% discount or we walk away.",

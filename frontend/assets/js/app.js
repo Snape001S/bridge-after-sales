@@ -13,20 +13,20 @@
   /* ---------- 快速体验案例（跨境电商语境，点击自动填入输入框 + 设置场景） ---------- */
   var DEMOS = {
     price: {
-      scene: "negotiation",
-      text: "Your price is too expensive."
+      scene: "customer",
+      text: "Where is my order? It was supposed to arrive last week."
     },
     complaint: {
       scene: "customer",
-      text: "Your product quality is unacceptable."
+      text: "The item arrived damaged. I want a solution today."
     },
     refund: {
       scene: "customer",
       text: "Just give me a refund."
     },
     competitive: {
-      scene: "negotiation",
-      text: "Your offer is not competitive."
+      scene: "customer",
+      text: "I want a full refund now."
     }
   };
 
@@ -35,14 +35,14 @@
     { scene: "email", name: "商务邮件", en: "Email Communication",
       desc: "询价、报价、催款、投诉、售后——外贸往来最核心的书面沟通场景。",
       text: "We have not received your payment. You must pay us immediately." },
-    { scene: "negotiation", name: "商务谈判", en: "Business Negotiation",
+    { scene: "customer", name: "描述不符", en: "Business Negotiation",
       desc: "价格协商、合同条款、方案取舍——在坚持立场与维护关系中寻找平衡。",
       text: "Your price is unacceptable. We will find another supplier." },
     { scene: "meeting", name: "国际会议", en: "International Meeting",
       desc: "提出观点、表达异议、总结发言——公开场合的表达更考验分寸。",
       text: "You are wrong. My plan is better." },
-    { scene: "ecommerce", name: "跨境电商", en: "Customer Communication",
-      desc: "客户咨询、产品描述、售后服务——线上交易的每一句回复都是口碑。",
+    { scene: "customer", name: "跨境电商", en: "Customer Communication",
+      desc: "客户咨询、产品描述、差评挽回——线上交易的每一句回复都是口碑。",
       text: "Your products are terrible. We want a full refund now." },
     { scene: "reception", name: "商务接待", en: "Business Reception",
       desc: "邀约、接待礼仪、文化差异——从第一封邀请函就开始建立关系。",
@@ -434,4 +434,6 @@
   initDiagnosis();
   initComparison();
 })();
+
+
 
