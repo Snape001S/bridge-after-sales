@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>沟通诊断 · 桥通售后</title>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<!-- 离线演示模式横幅 -->
+<div id="offlineBanner" style="display:none;background:#FFF7ED;border-bottom:1px solid #FDBA74;color:#9A3412;font-size:13px;text-align:center;padding:8px 16px">
+  ⚡ 离线演示模式：未连接分析服务，当前展示内置示例画像（启动后端即可获得真实分析）
+</div>
+
+<!-- 顶部导航 -->
+<nav class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="index.html">
+      <svg width="34" height="26" viewBox="0 0 48 32" fill="none" aria-hidden="true">
+        <defs>
+          <linearGradient id="bridgeG" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#1D4ED8"/><stop offset="1" stop-color="#0EA5E9"/>
+          </linearGradient>
+        </defs>
+        <path d="M4 28 Q24 2 44 28" stroke="url(#bridgeG)" stroke-width="6" stroke-linecap="round"/>
+        <line x1="13" y1="20" x2="13" y2="31" stroke="#1E3A8A" stroke-width="5" stroke-linecap="round"/>
+        <line x1="35" y1="20" x2="35" y2="31" stroke="#1E3A8A" stroke-width="5" stroke-linecap="round"/>
+      </svg>
+      <span class="brand-name">CrossBridge <span>AI</span></span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="打开菜单"><span></span><span></span><span></span></button>
+    <div class="nav-links">
+      <a class="nav-link" href="index.html">风险检测</a>
+      <a class="nav-link" href="diagnosis.html">沟通诊断</a>
+      <a class="nav-link" href="comparison.html">对比优化</a>
+      <a class="nav-link" href="model.html">模型说明</a>
+      <a class="nav-link" href="cases.html">案例库</a>
+    </div>
+  </div>
+</nav>
+
+<main class="container">
+
+  <!-- 画像头部 -->
+  <section class="report-hero">
+    <p class="eyebrow" style="width:100%">Communication Risk Profile · 沟通风险画像</p>
+    <div class="score-wrap">
+      <div class="score-ring">
+        <svg width="132" height="132" viewBox="0 0 132 132">
+          <circle cx="66" cy="66" r="52" fill="none" stroke="rgba(255,255,255,.18)" stroke-width="11"/>
+          <circle id="diagRing" cx="66" cy="66" r="52" fill="none"
+            stroke="url(#ringGrad)" stroke-width="11" stroke-linecap="round"
+            stroke-dasharray="326.7" stroke-dashoffset="326.7"/>
+          <defs>
+            <linearGradient id="ringGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#60A5FA"/><stop offset="1" stop-color="#93C5FD"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <div class="score-num">
+          <b class="tabular" id="diagTotal">--</b>
+          <span>/ 100</span>
+        </div>
+      </div>
+      <div class="score-info">
+        <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+          <h2>你的沟通风险画像</h2>
+          <span class="badge" id="diagRisk">分析中…</span>
+        </div>
+        <div class="score-meta" id="diagMeta"></div>
+        <p class="score-summary" id="diagSummary">正在基于多段沟通文本生成你的风险画像…</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 五维画像 -->
+  <section class="diag-grid">
+    <div class="card dim-card">
+      <p class="eyebrow">Five Dimensions</p>
+      <h3 class="section-title" style="font-size:18px;margin-top:4px">五维能力画像</h3>
+      <div class="radar-wrap">
+        <svg id="diagRadar" width="300" height="300" viewBox="0 0 300 300" role="img" aria-label="五维雷达图"></svg>
+      </div>
+    </div>
+    <div class="card dim-card">
+      <p class="eyebrow">Dimension Scores</p>
+      <h3 class="section-title" style="font-size:18px;margin-top:4px">维度得分（多次分析均值）</h3>
+      <div class="dim-bars" id="diagBars"></div>
+      <p class="tiny" style="margin-top:14px">* 基于多段典型国际沟通文本的 AI 分析聚合而成，用于展示跨场景沟通能力分布。</p>
+    </div>
+  </section>
+
+  <!-- 优势分析 -->
+  <section class="sec-block">
+    <p class="eyebrow">Strengths</p>
+    <h2 class="section-title" style="margin-top:4px">优势分析</h2>
+    <p class="section-sub">你沟通中的稳定优势维度</p>
+    <div class="strength-list" id="diagStrengths"></div>
+  </section>
+
+  <!-- 改进建议 -->
+  <section class="sec-block">
+    <p class="eyebrow">Improvement Suggestions</p>
+    <h2 class="section-title" style="margin-top:4px">改进建议</h2>
+    <p class="section-sub">提升跨文化商务沟通能力的具体方向</p>
+    <div class="advice-list" id="diagAdvice"></div>
+  </section>
+
+  <!-- 底部操作 -->
+  <div class="report-actions">
+    <button class="btn btn-primary" id="diagAgain" style="display:none" onclick="window.CB_RENDER_AGAIN && window.CB_RENDER_AGAIN()">↻ 重新生成画像</button>
+    <a class="btn btn-ghost" href="index.html">去风险检测 →</a>
+    <a class="btn btn-ghost" href="comparison.html">查看优化对比 →</a>
+  </div>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <svg width="22" height="16" viewBox="0 0 48 32" fill="none" aria-hidden="true">
+        <path d="M4 28 Q24 2 44 28" stroke="#1D4ED8" stroke-width="6" stroke-linecap="round"/>
+        <line x1="13" y1="20" x2="13" y2="31" stroke="#1E3A8A" stroke-width="5" stroke-linecap="round"/>
+        <line x1="35" y1="20" x2="35" y2="31" stroke="#1E3A8A" stroke-width="5" stroke-linecap="round"/>
+      </svg>
+      <span>桥通售后 · 跨文化商务沟通风险智能检测助手</span>
+    </div>
+    <div class="footer-note">AI + 商务英语 + 跨文化交际 · 新文科实践创新项目 · Demo</div>
+  </div>
+</footer>
+
+<script src="assets/js/mockdata.js"></script>
+<script src="assets/js/api.js"></script>
+<script src="assets/js/render.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
+

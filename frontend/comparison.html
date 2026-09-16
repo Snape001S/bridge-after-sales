@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>对比优化 · 桥通售后</title>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<!-- 离线演示模式横幅 -->
+<div id="offlineBanner" style="display:none;background:#FFF7ED;border-bottom:1px solid #FDBA74;color:#9A3412;font-size:13px;text-align:center;padding:8px 16px">
+  ⚡ 离线演示模式：未连接分析服务，当前展示内置示例对比（启动后端即可获得实时分析）
+</div>
+
+<!-- 顶部导航 -->
+<nav class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="index.html">
+      <svg width="34" height="26" viewBox="0 0 48 32" fill="none" aria-hidden="true">
+        <defs>
+          <linearGradient id="bridgeG" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#1D4ED8"/><stop offset="1" stop-color="#0EA5E9"/>
+          </linearGradient>
+        </defs>
+        <path d="M4 28 Q24 2 44 28" stroke="url(#bridgeG)" stroke-width="6" stroke-linecap="round"/>
+        <line x1="13" y1="20" x2="13" y2="31" stroke="#1E3A8A" stroke-width="5" stroke-linecap="round"/>
+        <line x1="35" y1="20" x2="35" y2="31" stroke="#1E3A8A" stroke-width="5" stroke-linecap="round"/>
+      </svg>
+      <span class="brand-name">CrossBridge <span>AI</span></span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="打开菜单"><span></span><span></span><span></span></button>
+    <div class="nav-links">
+      <a class="nav-link" href="index.html">风险检测</a>
+      <a class="nav-link" href="diagnosis.html">沟通诊断</a>
+      <a class="nav-link" href="comparison.html">对比优化</a>
+      <a class="nav-link" href="model.html">模型说明</a>
+      <a class="nav-link" href="cases.html">案例库</a>
+    </div>
+  </div>
+</nav>
+
+<main class="container">
+
+  <!-- 页头 -->
+  <section class="cmp-hero">
+    <p class="eyebrow">Before → After</p>
+    <h1 class="section-title" style="font-size:28px;margin-top:6px">跨文化沟通优化前后对比</h1>
+    <p class="section-sub" style="max-width:640px;margin:8px auto 0">
+      AI Risk Detection → Optimized Expression · 一句话翻译正确，文化上却可能"踩雷"——
+      看 AI 如何检测风险、给出优化，并让沟通风险显著降低。
+    </p>
+    <div class="pills cmp-pills" id="cmpFilter">
+      <button class="pill active" data-filter="all">全部</button>
+      <button class="pill" data-filter="email">商务邮件</button>
+      <button class="pill" data-filter="negotiation">商务谈判</button>
+      <button class="pill" data-filter="meeting">国际会议</button>
+      <button class="pill" data-filter="customer">客户沟通</button>
+    </div>
+  </section>
+
+  <!-- 对比案例列表 -->
+  <section class="cmp-list" id="cmpList">
+    <p style="text-align:center;color:var(--text-3);padding:60px 0">正在加载对比案例…</p>
+  </section>
+
+  <!-- 底部操作 -->
+  <div class="report-actions">
+    <a class="btn btn-primary" href="index.html">检测我的文本 →</a>
+    <a class="btn btn-ghost" href="diagnosis.html">查看沟通诊断 →</a>
+  </div>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <svg width="22" height="16" viewBox="0 0 48 32" fill="none" aria-hidden="true">
+        <path d="M4 28 Q24 2 44 28" stroke="#1D4ED8" stroke-width="6" stroke-linecap="round"/>
+        <line x1="13" y1="20" x2="13" y2="31" stroke="#1E3A8A" stroke-width="5" stroke-linecap="round"/>
+        <line x1="35" y1="20" x2="35" y2="31" stroke="#1E3A8A" stroke-width="5" stroke-linecap="round"/>
+      </svg>
+      <span>桥通售后 · 跨文化商务沟通风险智能检测助手</span>
+    </div>
+    <div class="footer-note">AI + 商务英语 + 跨文化交际 · 新文科实践创新项目 · Demo</div>
+  </div>
+</footer>
+
+<script src="assets/js/mockdata.js"></script>
+<script src="assets/js/api.js"></script>
+<script src="assets/js/render.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
+

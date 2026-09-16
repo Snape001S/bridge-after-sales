@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>桥通售后 · 跨境电商售后客诉跨文化回复与处理方案智能助手</title>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<!-- 顶部导航 -->
+<nav class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="index.html">
+      <svg width="34" height="26" viewBox="0 0 48 32" fill="none" aria-hidden="true">
+        <defs>
+          <linearGradient id="bridgeG" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#1D4ED8"/><stop offset="1" stop-color="#0EA5E9"/>
+          </linearGradient>
+        </defs>
+        <path d="M4 28 Q24 2 44 28" stroke="url(#bridgeG)" stroke-width="6" stroke-linecap="round"/>
+        <line x1="13" y1="20" x2="13" y2="31" stroke="#1E3A8A" stroke-width="5" stroke-linecap="round"/>
+        <line x1="35" y1="20" x2="35" y2="31" stroke="#1E3A8A" stroke-width="5" stroke-linecap="round"/>
+      </svg>
+      <span class="brand-name">CrossBridge <span>AI</span></span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="打开菜单"><span></span><span></span><span></span></button>
+    <div class="nav-links">
+      <a class="nav-link" href="index.html">风险检测</a>
+      <a class="nav-link" href="diagnosis.html">沟通诊断</a>
+      <a class="nav-link" href="comparison.html">对比优化</a>
+      <a class="nav-link" href="model.html">模型说明</a>
+      <a class="nav-link" href="cases.html">案例库</a>
+    </div>
+  </div>
+</nav>
+
+<main class="container">
+
+  <!-- ============ 第一层 · 核心使用区 ============ -->
+  <section class="hero">
+    <div class="hero-logo">
+      <svg width="52" height="40" viewBox="0 0 48 32" fill="none" aria-hidden="true">
+        <defs>
+          <linearGradient id="bridgeGHero" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#1D4ED8"/><stop offset="1" stop-color="#0EA5E9"/>
+          </linearGradient>
+        </defs>
+        <path d="M4 28 Q24 2 44 28" stroke="url(#bridgeGHero)" stroke-width="6" stroke-linecap="round"/>
+        <line x1="13" y1="20" x2="13" y2="31" stroke="#1E3A8A" stroke-width="5" stroke-linecap="round"/>
+        <line x1="35" y1="20" x2="35" y2="31" stroke="#1E3A8A" stroke-width="5" stroke-linecap="round"/>
+      </svg>
+      <span class="hero-brand">CrossBridge <span>AI</span></span>
+    </div>
+    <h1 class="hero-title">跨境电商售后客诉跨文化回复与处理方案智能助手</h1>
+    <p class="hero-en">AI-powered Cross-cultural Communication Risk Detector for Cross-border E-commerce</p>
+    <p class="hero-tagline">不只是翻译，更要识别跨境沟通中的文化风险</p>
+    <p class="hero-sub">面向跨境电商卖家、外贸从业者及国际业务人员，针对询盘、报价、谈判、客户投诉、售后沟通等高频场景，提供跨文化沟通风险检测与表达优化。</p>
+  </section>
+
+  <!-- 核心检测（首页视觉焦点） -->
+  <section class="card analyze-card">
+    <div class="scene-row">
+      <span class="scene-label">商务场景</span>
+      <div class="pills" id="scenePills">
+        <button class="pill active" data-scene="ecommerce">客户询盘</button>
+        <button class="pill" data-scene="email">产品报价</button>
+        <button class="pill" data-scene="negotiation">商务谈判</button>
+        <button class="pill" data-scene="customer">客户投诉</button>
+        <button class="pill" data-scene="customer">售后沟通</button>
+      </div>
+    </div>
+    <div class="scene-row" style="margin-top:12px">
+      <span class="scene-label">目标文化</span>
+      <div class="pills" id="culturePills">
+        <button class="pill active" data-culture="auto">自动识别</button>
+        <button class="pill" data-culture="us">美国</button>
+        <button class="pill" data-culture="europe">欧洲</button>
+        <button class="pill" data-culture="japan">日本</button>
+        <button class="pill" data-culture="seasia">东南亚</button>
+        <button class="pill" data-culture="mideast">中东</button>
+      </div>
+      <span class="tiny">覆盖跨境电商主要目标市场的文化沟通差异</span>
+    </div>
+    <div class="scene-row" style="margin-top:12px">
+      <span class="scene-label">业务场景</span>
+      <div class="pills" id="bizPills">
+        <button class="pill active" data-biz="auto">自动识别</button>
+        <button class="pill" data-biz="inquiry">产品询价</button>
+        <button class="pill" data-biz="quotation">报价回复</button>
+        <button class="pill" data-biz="negotiation">商务谈判</button>
+        <button class="pill" data-biz="complaint">客户投诉</button>
+        <button class="pill" data-biz="contract">合同沟通</button>
+        <button class="pill" data-biz="aftersales">售后服务</button>
+      </div>
+    </div>
+    <textarea class="analyze-textarea" id="analyzeInput" placeholder="请输入国际商务沟通内容。AI 将从语言准确性、商务礼仪、文化适配、表达清晰度、合作友好度五个维度进行分析。"></textarea>
+    <div class="analyze-actions">
+      <span class="demo-hint">支持中英混合输入 · 也可点击下方「快速体验案例」一键填入</span>
+      <button class="btn btn-primary" id="analyzeBtn">开始智能检测 →</button>
+    </div>
+  </section>
+
+  <!-- 快速体验案例 -->
+  <section class="quick-exp" style="max-width:860px;margin:18px auto 0">
+    <div class="quick-exp-label">⚡ 快速体验案例 · 点击自动填入，直接开始检测</div>
+    <div class="quick-exp-grid" style="grid-template-columns:repeat(4,1fr)">
+      <button class="quick-card" data-demo="price"><b>报价谈判</b><span>"Your price is too expensive." 直接压价</span></button>
+      <button class="quick-card" data-demo="complaint"><b>客户投诉</b><span>"Your product quality is unacceptable." 情绪化投诉</span></button>
+      <button class="quick-card" data-demo="refund"><b>售后沟通</b><span>"Just give me a refund." 直接要求退款</span></button>
+      <button class="quick-card" data-demo="competitive"><b>商务谈判</b><span>"Your offer is not competitive." 直接否定报价</span></button>
+    </div>
+    <div class="flow-strip" style="margin-top:14px">
+      <span class="f-step">① 输入商务沟通文本</span><span class="f-arr">↓</span>
+      <span class="f-step">② AI 风险检测</span><span class="f-arr">↓</span>
+      <span class="f-step">③ 五维评分分析</span><span class="f-arr">↓</span>
+      <span class="f-step">④ 智能表达优化</span>
+    </div>
+  </section>
+
+  <!-- ============ 第二层 · 产品专业能力 ============ -->
+  <section class="positioning">
+    <p class="eyebrow">Core Value · 项目核心价值</p>
+    <div class="pos-statement">翻译解决<span class="hl">「对不对」</span>，我们解决<span class="hl">「得体不得体」</span></div>
+    <div class="pos-points">
+      <span class="pos-point">语言准确性</span>
+      <span class="pos-point">商务表达</span>
+      <span class="pos-point">跨文化适配</span>
+    </div>
+    <p class="pos-sub">帮助跨境电商从业者降低因文化差异导致的沟通误判。</p>
+
+    <!-- 核心指标 -->
+    <div class="core-stats">
+      <div class="core-stat">
+        <div class="cs-icon" style="background:#EFF4FF">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1D4ED8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+        </div>
+        <div>
+          <b class="tabular">5 大商务场景</b>
+          <div class="cs-sub">覆盖国际商务沟通高频场景</div>
+          <div class="cs-tags">
+            <span class="cs-tag">外贸邮件</span><span class="cs-tag">商务谈判</span>
+            <span class="cs-tag">国际会议</span><span class="cs-tag">跨境电商</span><span class="cs-tag">商务接待</span>
+          </div>
+        </div>
+      </div>
+      <div class="core-stat">
+        <div class="cs-icon" style="background:#F3E8FF">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/></svg>
+        </div>
+        <div>
+          <b class="tabular">五维风险评价模型</b>
+          <div class="cs-sub">针对跨境电商高频沟通场景，从语言准确性、商务礼貌、文化适配、表达清晰、合作友好五维评估</div>
+          <div class="cs-tags">
+            <span class="cs-tag">语言准确性</span><span class="cs-tag">商务礼貌</span>
+            <span class="cs-tag">文化适配</span><span class="cs-tag">表达清晰</span><span class="cs-tag">合作友好</span>
+          </div>
+        </div>
+      </div>
+      <div class="core-stat">
+        <div class="cs-icon" style="background:#E0F2FE">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 016.5 17H20V2H6.5A2.5 2.5 0 004 4.5v15z"/><path d="M4 19.5A2.5 2.5 0 006.5 22H20v-5"/></svg>
+        </div>
+        <div>
+          <b class="tabular">专业案例库</b>
+          <div class="cs-sub">52 条跨境商务沟通案例 · 学科知识驱动</div>
+          <div class="cs-tags">
+            <span class="cs-tag">30 风险案例</span><span class="cs-tag">22 场景案例</span>
+            <span class="cs-tag">来源可追溯</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 商务英语专业特色三卡 -->
+  <section class="feature-section">
+    <p class="eyebrow">Professional Core · 商务英语专业特色</p>
+    <h2 class="section-title" style="margin-top:4px">跨文化商务知识驱动的风险检测</h2>
+    <p class="section-sub">不是通用模型自由发挥——每一处判断都基于跨文化交际与商务英语知识框架。</p>
+    <div class="feature-grid">
+      <div class="card card-hover feature-card">
+        <div class="value-icon" style="background:#E0F2FE">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.7 3.8 9S14.5 18.4 12 21c-2.5-2.6-3.8-5.7-3.8-9S9.5 5.6 12 3z"/></svg>
+        </div>
+        <div class="fc-title">跨文化交际理论</div>
+        <div class="fc-en">Intercultural Communication Theory</div>
+        <p class="fc-desc">以霍尔高低语境理论、霍夫斯泰德文化维度、面子理论为分析框架，识别"翻译正确但文化失当"的深层风险。</p>
+        <div class="fc-tags">
+          <span class="tag tag-cyan">高低语境</span>
+          <span class="tag tag-cyan">面子理论</span>
+          <span class="tag tag-cyan">文化维度</span>
+        </div>
+      </div>
+      <div class="card card-hover feature-card">
+        <div class="value-icon" style="background:#F3E8FF">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 12l3 3 5-6"/><circle cx="12" cy="12" r="9"/></svg>
+        </div>
+        <div class="fc-title">商务礼仪分析</div>
+        <div class="fc-en">Business Etiquette Analysis</div>
+        <p class="fc-desc">基于语用学礼貌原则与商务信函规范，检测称呼头衔、请求语气（You must → Could you → Would you mind）、寒暄致谢等礼仪风险。</p>
+        <div class="fc-tags">
+          <span class="tag tag-purple">礼貌原则</span>
+          <span class="tag tag-purple">请求语气阶梯</span>
+          <span class="tag tag-purple">语步结构</span>
+        </div>
+      </div>
+      <div class="card card-hover feature-card">
+        <div class="value-icon" style="background:#EFF4FF">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1D4ED8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7l8-4z"/><path d="M9 12l2 2 4-4"/></svg>
+        </div>
+        <div class="fc-title">文化适配评估</div>
+        <div class="fc-en">Cultural Adaptability Assessment</div>
+        <p class="fc-desc">从直接与委婉、权力距离、时间观等维度量化评估表达的文化适配度，输出五维模型中的"文化适配"得分与改善路径。</p>
+        <div class="fc-tags">
+          <span class="tag tag-blue">直接 vs 委婉</span>
+          <span class="tag tag-blue">权力距离</span>
+          <span class="tag tag-blue">时间观</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 第三层 · 项目介绍/价值说明 ============ -->
+  <section class="scene-center">
+    <p class="eyebrow">Business Scenario Center</p>
+    <h2 class="section-title" style="margin-top:4px">跨境电商沟通场景中心</h2>
+    <p class="section-sub">聚焦跨境电商高频沟通场景 · 点击卡片自动设置分析场景并填入示例文本</p>
+    <div class="scene-grid" id="sceneGrid">
+      <div class="card card-hover scene-card" data-scene="ecommerce" data-text="We are interested in your product. Could you please send us your price list and MOQ?">
+        <div class="scene-icon" style="background:#EFF4FF">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1D4ED8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+        </div>
+        <div class="scene-name">客户询盘</div>
+        <div class="scene-en">Customer Inquiry</div>
+        <div class="scene-desc">询价、索样、起订量——海外买家的第一封询盘，决定沟通基调。</div>
+        <div class="scene-hint">✓ 已选择，自动填入输入框</div>
+      </div>
+      <div class="card card-hover scene-card" data-scene="email" data-text="We have received your quotation, but your price is too expensive. Please give us a better price.">
+        <div class="scene-icon" style="background:#F3E8FF">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 2l4 4-4 4M21 6H8M7 22l-4-4 4-4M3 18h13"/></svg>
+        </div>
+        <div class="scene-name">产品报价</div>
+        <div class="scene-en">Product Quotation</div>
+        <div class="scene-desc">报价、议价、下单——价格沟通最考验分寸，直白与委婉间需要平衡。</div>
+        <div class="scene-hint">✓ 已选择，自动填入输入框</div>
+      </div>
+      <div class="card card-hover scene-card" data-scene="negotiation" data-text="Your price is unacceptable. We will find another supplier.">
+        <div class="scene-icon" style="background:#E0F2FE">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 2l4 4-4 4M21 6H8M7 22l-4-4 4-4M3 18h13"/></svg>
+        </div>
+        <div class="scene-name">商务谈判</div>
+        <div class="scene-en">Business Negotiation</div>
+        <div class="scene-desc">条款、价格、交期——在坚持立场与维护关系中寻找平衡。</div>
+        <div class="scene-hint">✓ 已选择，自动填入输入框</div>
+      </div>
+      <div class="card card-hover scene-card" data-scene="customer" data-text="Your products are terrible. We want a full refund now.">
+        <div class="scene-icon" style="background:#FEF3C7">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="20" r="1.6"/><circle cx="17" cy="20" r="1.6"/><path d="M3 4h2l2.5 12h11L21 8H6"/></svg>
+        </div>
+        <div class="scene-name">客户投诉</div>
+        <div class="scene-en">Customer Complaint</div>
+        <div class="scene-desc">质量、错发、破损——投诉处理中的每一句回复都是口碑。</div>
+        <div class="scene-hint">✓ 已选择，自动填入输入框</div>
+      </div>
+      <div class="card card-hover scene-card" data-scene="customer" data-text="Just give me a refund.">
+        <div class="scene-icon" style="background:#F0FDF4">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 100 20 10 10 0 000-20z"/><path d="M8 12l3 3 5-6"/></svg>
+        </div>
+        <div class="scene-name">售后沟通</div>
+        <div class="scene-en">After-sales Service</div>
+        <div class="scene-desc">退换货、退款、好评引导——售后沟通决定复购与店铺评价。</div>
+        <div class="scene-hint">✓ 已选择，自动填入输入框</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 项目说明 -->
+  <section class="about" id="about">
+    <p class="eyebrow">About the Project</p>
+    <h2 class="section-title" style="margin-top:6px">桥通售后 是什么？</h2>
+    <div class="about-grid">
+      <div class="card about-card">
+        <div class="value-title" style="font-size:15px">不是……而是……</div>
+        <ul class="about-list" style="margin-top:12px">
+          <li>不是翻译软件 —— 而是检测"翻译看不出的风险"</li>
+          <li>不是英语学习软件 —— 而是商务实战的"发送前体检"</li>
+          <li>不是通用写作助手 —— 而是有专业评价体系的跨文化沟通顾问</li>
+          <li>输出：五维风险评分 + 问题分析 + 优化表达 + 文化解释</li>
+        </ul>
+      </div>
+      <div class="card about-card">
+        <div class="value-title" style="font-size:15px">专业内核：五维风险评价模型</div>
+        <ul class="about-list" style="margin-top:12px">
+          <li>Language Accuracy · 语言准确性</li>
+          <li>Business Politeness · 商务礼貌程度</li>
+          <li>Cultural Adaptability · 文化适配程度</li>
+          <li>Communication Clarity · 表达清晰程度</li>
+          <li>Relationship Friendliness · 关系维护友好度</li>
+        </ul>
+      </div>
+    </div>
+    <!-- 商务英语学科基因 -->
+    <div class="pro-gene">
+      <span class="gene-chip"><span class="g-ic">🧭</span>语用学 · <b>礼貌原则</b></span>
+      <span class="gene-chip"><span class="g-ic">🌏</span>跨文化交际 · <b>高低语境理论</b></span>
+      <span class="gene-chip"><span class="g-ic">🤝</span>跨文化交际 · <b>面子理论</b></span>
+      <span class="gene-chip"><span class="g-ic">✉️</span>商务英语 · <b>信函语步结构</b></span>
+      <span class="gene-chip"><span class="g-ic">📊</span>商务英语 · <b>五维评价模型</b></span>
+    </div>
+    <div style="margin-top:22px">
+      <a class="btn btn-ghost" href="model.html">了解六层评价模型 →</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <svg width="22" height="16" viewBox="0 0 48 32" fill="none" aria-hidden="true">
+        <path d="M4 28 Q24 2 44 28" stroke="#1D4ED8" stroke-width="6" stroke-linecap="round"/>
+        <line x1="13" y1="20" x2="13" y2="31" stroke="#1E3A8A" stroke-width="5" stroke-linecap="round"/>
+        <line x1="35" y1="20" x2="35" y2="31" stroke="#1E3A8A" stroke-width="5" stroke-linecap="round"/>
+      </svg>
+      <span>桥通售后 · 跨文化商务沟通风险智能检测助手</span>
+    </div>
+    <div class="footer-note">桥通售后 v1.0 · AI 跨文化商务沟通风险检测助手</div>
+  </div>
+</footer>
+
+<!-- 分析动画浮层 -->
+<div class="overlay" id="analyzeOverlay">
+  <div class="analyzing">
+    <h3>桥通售后 正在分析</h3>
+    <p class="analyzing-sub">AI-powered risk detection in progress…</p>
+    <div class="steps" id="stepsBox"></div>
+  </div>
+</div>
+
+<script src="assets/js/mockdata.js"></script>
+<script src="assets/js/api.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
+

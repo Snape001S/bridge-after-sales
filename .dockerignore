@@ -1,0 +1,8 @@
+# 部署时排除的文件
+__pycache__/
+*.pyc
+*.log
+docs/
+scripts/
+README.html
+deploy/README-部署.md

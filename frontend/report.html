@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>分析报告 · 桥通售后</title>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<!-- 离线演示模式横幅 -->
+<div id="offlineBanner" style="display:none;background:#FFF7ED;border-bottom:1px solid #FDBA74;color:#9A3412;font-size:13px;text-align:center;padding:8px 16px">
+  ⚡ 离线演示模式：未连接分析服务，当前展示内置示例数据（启动后端即可获得真实 AI 分析）
+</div>
+
+<!-- 顶部导航 -->
+<nav class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="index.html">
+      <svg width="34" height="26" viewBox="0 0 48 32" fill="none" aria-hidden="true">
+        <defs>
+          <linearGradient id="bridgeG" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#1D4ED8"/><stop offset="1" stop-color="#0EA5E9"/>
+          </linearGradient>
+        </defs>
+        <path d="M4 28 Q24 2 44 28" stroke="url(#bridgeG)" stroke-width="6" stroke-linecap="round"/>
+        <line x1="13" y1="20" x2="13" y2="31" stroke="#1E3A8A" stroke-width="5" stroke-linecap="round"/>
+        <line x1="35" y1="20" x2="35" y2="31" stroke="#1E3A8A" stroke-width="5" stroke-linecap="round"/>
+      </svg>
+      <span class="brand-name">CrossBridge <span>AI</span></span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="打开菜单"><span></span><span></span><span></span></button>
+    <div class="nav-links">
+      <a class="nav-link" href="index.html">风险检测</a>
+      <a class="nav-link" href="diagnosis.html">沟通诊断</a>
+      <a class="nav-link" href="comparison.html">对比优化</a>
+      <a class="nav-link" href="model.html">模型说明</a>
+      <a class="nav-link" href="cases.html">案例库</a>
+    </div>
+  </div>
+</nav>
+
+<main class="container">
+
+  <!-- 报告头部 -->
+  <section class="report-hero">
+    <p class="eyebrow" style="width:100%">Analysis Report · 风险分析报告</p>
+    <div class="score-wrap">
+      <div class="score-ring">
+        <svg width="132" height="132" viewBox="0 0 132 132">
+          <circle cx="66" cy="66" r="52" fill="none" stroke="rgba(255,255,255,.18)" stroke-width="11"/>
+          <circle id="ringProgress" cx="66" cy="66" r="52" fill="none"
+            stroke="url(#ringGrad)" stroke-width="11" stroke-linecap="round"
+            stroke-dasharray="326.7" stroke-dashoffset="326.7"/>
+          <defs>
+            <linearGradient id="ringGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#60A5FA"/><stop offset="1" stop-color="#93C5FD"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <div class="score-num">
+          <b class="tabular" id="scoreNum">--</b>
+          <span>/ 100</span>
+        </div>
+      </div>
+      <div class="score-info">
+        <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+          <h2>综合风险评分</h2>
+          <span class="badge" id="riskBadge">分析中…</span>
+        </div>
+        <div class="score-meta" id="metaChips"></div>
+        <p class="score-summary" id="scoreSummary">正在生成专业分析报告…</p>
+        <div class="risk-gauge" id="riskGauge"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 五维评价 -->
+  <section class="dim-grid">
+    <div class="card dim-card">
+      <p class="eyebrow">Five Dimensions</p>
+      <h3 class="section-title" style="font-size:18px;margin-top:4px">五维风险评价</h3>
+      <div class="radar-wrap">
+        <svg id="radarChart" width="300" height="300" viewBox="0 0 300 300" role="img" aria-label="五维雷达图"></svg>
+      </div>
+    </div>
+    <div class="card dim-card">
+      <p class="eyebrow">Dimension Scores</p>
+      <h3 class="section-title" style="font-size:18px;margin-top:4px">维度得分</h3>
+      <div class="dim-bars" id="dimBars"></div>
+    </div>
+  </section>
+
+  <!-- STEP 1 风险发现 -->
+  <section class="section-block">
+    <span class="step-chip">STEP ① 风险发现</span>
+    <p class="eyebrow">AI Reasoning Process</p>
+    <h2 class="section-title" style="margin-top:4px">AI 分析过程</h2>
+    <p class="section-sub">展示 AI 如何判断风险 —— 关键词识别 → 商务意图 → 风险判断 → 文化因素 → 最终风险</p>
+    <div id="reasoningBox"></div>
+    <p class="eyebrow" style="margin-top:32px">Risk Analysis</p>
+    <h2 class="section-title" style="margin-top:4px">风险分析</h2>
+    <p class="section-sub">基于语用学与跨文化交际理论的逐句审查 · 按风险严重程度排序</p>
+    <div id="issuesBox"></div>
+  </section>
+
+  <!-- STEP 2 理论依据 -->
+  <section class="section-block">
+    <span class="step-chip">STEP ② 理论依据</span>
+    <p class="eyebrow">AI Judgment Basis</p>
+    <h2 class="section-title" style="margin-top:4px">评分依据</h2>
+    <p class="section-sub">每一维度评分的学科依据与检测方法 —— 判断标准来自商务英语与跨文化交际学科，而非模型自由发挥</p>
+    <div id="judgmentBox"></div>
+  </section>
+
+  <!-- STEP 3 案例支撑 -->
+  <section class="section-block">
+    <span class="step-chip">STEP ③ 案例支撑</span>
+    <p class="eyebrow">Related Cases</p>
+    <h2 class="section-title" style="margin-top:4px">同场景案例复盘</h2>
+    <p class="section-sub">相同的问题，在国际商务实战中曾如何影响合作——来自 50 条专家标注案例库</p>
+    <div id="relatedBox"></div>
+  </section>
+
+  <!-- STEP 4 表达优化 -->
+  <section class="section-block">
+    <span class="step-chip">STEP ④ 表达优化</span>
+    <p class="eyebrow">Optimized Expressions</p>
+    <h2 class="section-title" style="margin-top:4px">优化表达与预期效果</h2>
+    <p class="section-sub">每一处修改均保留原始商务意图，按国际商务语用规范重写，可直接复制使用</p>
+    <div id="fixesBox"></div>
+  </section>
+
+  <!-- 应用价值 -->
+  <section class="section-block">
+    <p class="eyebrow">Business Value · 应用价值</p>
+    <h2 class="section-title" style="margin-top:4px">从 15 分钟到 30 秒</h2>
+    <div class="value-compare">
+      <div class="vc-card vc-old">
+        <div class="vc-label">传统方式 · 人工分析</div>
+        <div class="vc-time"><b class="tabular">10–15</b><span>分钟 / 封邮件</span></div>
+        <p>依赖个人经验判断跨文化风险，标准不一、效率有限</p>
+      </div>
+      <div class="vc-arrow">→</div>
+      <div class="vc-card vc-new">
+        <div class="vc-label">桥通售后 · 辅助检测</div>
+        <div class="vc-time"><b class="tabular">30</b><span>秒 / 次检测</span></div>
+        <p>五维评分 + 推理过程 + 三套表达策略，标准统一、即时可用</p>
+      </div>
+    </div>
+    <div class="value-points">
+      <div class="card value-point">
+        <div class="value-icon" style="background:#EFF4FF">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1D4ED8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg>
+        </div>
+        <div><b>提高国际商务沟通效率</b><span>检测与改写从分钟级压缩到秒级，新人也能输出专业表达</span></div>
+      </div>
+      <div class="card value-point">
+        <div class="value-icon" style="background:#F3E8FF">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7l8-4z"/><path d="M9 12l2 2 4-4"/></svg>
+        </div>
+        <div><b>降低跨文化误解风险</b><span>发送前识别语言、礼仪、文化三层风险，避免"翻译正确但沟通失败"</span></div>
+      </div>
+      <div class="card value-point">
+        <div class="value-icon" style="background:#E0F2FE">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0284C7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V10M10 21V10M15 21V10M20 21V10M2 10l10-7 10 7"/></svg>
+        </div>
+        <div><b>提升企业海外合作成功率</b><span>专业得体的一线沟通，降低因失礼而流失客户与订单的风险</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 底部操作 -->
+  <div class="report-actions">
+    <a class="btn btn-primary" href="index.html">← 重新检测</a>
+    <button class="btn btn-ghost" id="copyBtn">复制全部优化表达</button>
+    <a class="btn btn-ghost" href="cases.html">浏览案例库 →</a>
+  </div>
+
+  <!-- AI 使用说明 -->
+  <p class="ai-disclaimer">⚖️ AI 使用说明：本系统分析结果用于商务沟通辅助参考，实际商业决策需结合具体业务环境、行业惯例与法律要求综合判断。</p>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <svg width="22" height="16" viewBox="0 0 48 32" fill="none" aria-hidden="true">
+        <path d="M4 28 Q24 2 44 28" stroke="#1D4ED8" stroke-width="6" stroke-linecap="round"/>
+        <line x1="13" y1="20" x2="13" y2="31" stroke="#1E3A8A" stroke-width="5" stroke-linecap="round"/>
+        <line x1="35" y1="20" x2="35" y2="31" stroke="#1E3A8A" stroke-width="5" stroke-linecap="round"/>
+      </svg>
+      <span>桥通售后 · 跨文化商务沟通风险智能检测助手</span>
+    </div>
+    <div class="footer-note">AI + 商务英语 + 跨文化交际 · 新文科实践创新项目 · Demo</div>
+  </div>
+</footer>
+
+<script src="assets/js/mockdata.js"></script>
+<script src="assets/js/api.js"></script>
+<script src="assets/js/render.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
+

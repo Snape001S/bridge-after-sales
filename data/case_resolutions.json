@@ -1,0 +1,212 @@
+{
+  "EM-001": {
+    "before_total": 86,
+    "before_risk": "低风险 · Low Risk",
+    "after_total": 90,
+    "after_risk": "低风险 · Low Risk",
+    "improvement": 4
+  },
+  "EM-002": {
+    "before_total": 78,
+    "before_risk": "中风险 · Medium Risk",
+    "after_total": 90,
+    "after_risk": "低风险 · Low Risk",
+    "improvement": 12
+  },
+  "EM-003": {
+    "before_total": 80,
+    "before_risk": "中风险 · Medium Risk",
+    "after_total": 90,
+    "after_risk": "低风险 · Low Risk",
+    "improvement": 10
+  },
+  "EM-004": {
+    "before_total": 81,
+    "before_risk": "中风险 · Medium Risk",
+    "after_total": 90,
+    "after_risk": "低风险 · Low Risk",
+    "improvement": 9
+  },
+  "EM-005": {
+    "before_total": 76,
+    "before_risk": "中风险 · Medium Risk",
+    "after_total": 80,
+    "after_risk": "中风险 · Medium Risk",
+    "improvement": 4
+  },
+  "EM-006": {
+    "before_total": 81,
+    "before_risk": "中风险 · Medium Risk",
+    "after_total": 90,
+    "after_risk": "低风险 · Low Risk",
+    "improvement": 9
+  },
+  "EM-007": {
+    "before_total": 86,
+    "before_risk": "低风险 · Low Risk",
+    "after_total": 90,
+    "after_risk": "低风险 · Low Risk",
+    "improvement": 4
+  },
+  "EM-008": {
+    "before_total": 86,
+    "before_risk": "低风险 · Low Risk",
+    "after_total": 90,
+    "after_risk": "低风险 · Low Risk",
+    "improvement": 4
+  },
+  "EM-009": {
+    "before_total": 86,
+    "before_risk": "低风险 · Low Risk",
+    "after_total": 90,
+    "after_risk": "低风险 · Low Risk",
+    "improvement": 4
+  },
+  "EM-010": {
+    "before_total": 84,
+    "before_risk": "中风险 · Medium Risk",
+    "after_total": 90,
+    "after_risk": "低风险 · Low Risk",
+    "improvement": 6
+  },
+  "NG-001": {
+    "before_total": 81,
+    "before_risk": "中风险 · Medium Risk",
+    "after_total": 90,
+    "after_risk": "低风险 · Low Risk",
+    "improvement": 9
+  },
+  "NG-002": {
+    "before_total": 80,
+    "before_risk": "中风险 · Medium Risk",
+    "after_total": 90,
+    "after_risk": "低风险 · Low Risk",
+    "improvement": 10
+  },
+  "NG-003": {
+    "before_total": 81,
+    "before_risk": "中风险 · Medium Risk",
+    "after_total": 90,
+    "after_risk": "低风险 · Low Risk",
+    "improvement": 9
+  },
+  "NG-004": {
+    "before_total": 75,
+    "before_risk": "中风险 · Medium Risk",
+    "after_total": 90,
+    "after_risk": "低风险 · Low Risk",
+    "improvement": 15
+  },
+  "NG-005": {
+    "before_total": 84,
+    "before_risk": "中风险 · Medium Risk",
+    "after_total": 90,
+    "after_risk": "低风险 · Low Risk",
+    "improvement": 6
+  },
+  "NG-006": {
+    "before_total": 86,
+    "before_risk": "低风险 · Low Risk",
+    "after_total": 86,
+    "after_risk": "低风险 · Low Risk",
+    "improvement": 0
+  },
+  "NG-007": {
+    "before_total": 81,
+    "before_risk": "中风险 · Medium Risk",
+    "after_total": 90,
+    "after_risk": "低风险 · Low Risk",
+    "improvement": 9
+  },
+  "NG-008": {
+    "before_total": 84,
+    "before_risk": "中风险 · Medium Risk",
+    "after_total": 90,
+    "after_risk": "低风险 · Low Risk",
+    "improvement": 6
+  },
+  "MT-001": {
+    "before_total": 81,
+    "before_risk": "中风险 · Medium Risk",
+    "after_total": 90,
+    "after_risk": "低风险 · Low Risk",
+    "improvement": 9
+  },
+  "MT-002": {
+    "before_total": 86,
+    "before_risk": "低风险 · Low Risk",
+    "after_total": 90,
+    "after_risk": "低风险 · Low Risk",
+    "improvement": 4
+  },
+  "MT-003": {
+    "before_total": 78,
+    "before_risk": "中风险 · Medium Risk",
+    "after_total": 90,
+    "after_risk": "低风险 · Low Risk",
+    "improvement": 12
+  },
+  "MT-004": {
+    "before_total": 81,
+    "before_risk": "中风险 · Medium Risk",
+    "after_total": 90,
+    "after_risk": "低风险 · Low Risk",
+    "improvement": 9
+  },
+  "MT-005": {
+    "before_total": 86,
+    "before_risk": "低风险 · Low Risk",
+    "after_total": 90,
+    "after_risk": "低风险 · Low Risk",
+    "improvement": 4
+  },
+  "CU-001": {
+    "before_total": 84,
+    "before_risk": "中风险 · Medium Risk",
+    "after_total": 90,
+    "after_risk": "低风险 · Low Risk",
+    "improvement": 6
+  },
+  "CU-002": {
+    "before_total": 72,
+    "before_risk": "中风险 · Medium Risk",
+    "after_total": 86,
+    "after_risk": "低风险 · Low Risk",
+    "improvement": 14
+  },
+  "CU-003": {
+    "before_total": 86,
+    "before_risk": "低风险 · Low Risk",
+    "after_total": 90,
+    "after_risk": "低风险 · Low Risk",
+    "improvement": 4
+  },
+  "CU-004": {
+    "before_total": 84,
+    "before_risk": "中风险 · Medium Risk",
+    "after_total": 90,
+    "after_risk": "低风险 · Low Risk",
+    "improvement": 6
+  },
+  "CU-005": {
+    "before_total": 84,
+    "before_risk": "中风险 · Medium Risk",
+    "after_total": 90,
+    "after_risk": "低风险 · Low Risk",
+    "improvement": 6
+  },
+  "DC-001": {
+    "before_total": 84,
+    "before_risk": "中风险 · Medium Risk",
+    "after_total": 90,
+    "after_risk": "低风险 · Low Risk",
+    "improvement": 6
+  },
+  "DC-002": {
+    "before_total": 81,
+    "before_risk": "中风险 · Medium Risk",
+    "after_total": 90,
+    "after_risk": "低风险 · Low Risk",
+    "improvement": 9
+  }
+}

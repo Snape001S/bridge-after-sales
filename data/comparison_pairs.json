@@ -1,0 +1,78 @@
+{
+  "version": "1.0",
+  "description": "CrossBridge AI 优化前后对比案例（8 组）：原表达 vs 优化表达，评分由系统实时分析计算",
+  "pairs": [
+    {
+      "id": "CMP-001",
+      "scene": "email",
+      "scene_label": "商务邮件",
+      "title": "催款邮件",
+      "original": "We have not received your payment. You must pay us immediately.",
+      "optimized": "Dear Mr. Chen,\n\nWe noticed that payment for invoice INV-2025-01 (due last Friday) has not yet reached us. Could you kindly check on the status? If there is any issue, we will be happy to work with you on a solution.",
+      "risk_focus": "命令式语气与直接施压"
+    },
+    {
+      "id": "CMP-002",
+      "scene": "negotiation",
+      "scene_label": "商务谈判",
+      "title": "报价谈判",
+      "original": "Your price is unacceptable. We will find another supplier.",
+      "optimized": "We value our cooperation. However, the current price exceeds our budget. Could you kindly share how the price is structured? We would like to explore a solution that works for both sides.",
+      "risk_focus": "威胁式施压与关闭谈判"
+    },
+    {
+      "id": "CMP-003",
+      "scene": "meeting",
+      "scene_label": "国际会议",
+      "title": "会议反驳",
+      "original": "You are wrong. My plan is better.",
+      "optimized": "I see the merits of your approach. Let me share an alternative angle that could complement it, and we can compare the two together.",
+      "risk_focus": "当众否定伤面子"
+    },
+    {
+      "id": "CMP-004",
+      "scene": "customer",
+      "scene_label": "客户沟通",
+      "title": "延误责任",
+      "original": "The delay is not our fault. Our supplier made the mistake.",
+      "optimized": "We sincerely apologize for the delay. We are working closely with our supply chain to resolve it, and we will provide a confirmed schedule within 48 hours.",
+      "risk_focus": "责任推诿"
+    },
+    {
+      "id": "CMP-005",
+      "scene": "email",
+      "scene_label": "商务邮件",
+      "title": "跟进质问",
+      "original": "Why haven't you replied to our emails?",
+      "optimized": "I wanted to follow up on my previous messages regarding the quotation. When you have a moment, could you let us know your thoughts?",
+      "risk_focus": "质问式跟进"
+    },
+    {
+      "id": "CMP-006",
+      "scene": "negotiation",
+      "scene_label": "商务谈判",
+      "title": "压价威胁",
+      "original": "Give us a 15% discount or we walk away.",
+      "optimized": "Given our projected order volume of 20,000 units, could you kindly consider a 15% adjustment? We believe this would support a long-term partnership.",
+      "risk_focus": "最后通牒式威胁"
+    },
+    {
+      "id": "CMP-007",
+      "scene": "meeting",
+      "scene_label": "国际会议",
+      "title": "方案拒绝",
+      "original": "Your proposal is completely wrong.",
+      "optimized": "Thank you for sharing your proposal. We see potential in some aspects. However, the timeline may need further discussion. Could we explore adjustments together?",
+      "risk_focus": "全盘否定伤面子"
+    },
+    {
+      "id": "CMP-008",
+      "scene": "customer",
+      "scene_label": "客户沟通",
+      "title": "投诉指责",
+      "original": "Your products are terrible. We want a full refund now.",
+      "optimized": "We have identified quality issues with batch #102 received on May 10. This has affected our operations. Could you please investigate and advise on how you plan to resolve this, including compensation options?",
+      "risk_focus": "情绪化指责"
+    }
+  ]
+}

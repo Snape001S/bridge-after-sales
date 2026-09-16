@@ -1,0 +1,638 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><title>CrossBridge AI 文档</title><style>body{font-family:"Microsoft YaHei",sans-serif;max-width:960px;margin:40px auto;padding:0 24px;line-height:1.8;color:#1f2328}table{border-collapse:collapse;width:100%;margin:12px 0}th,td{border:1px solid #d0d7de;padding:8px 10px;text-align:left;vertical-align:top}th{background:#f0f4ff}code{background:#f0f0f0;padding:2px 6px;border-radius:4px;font-family:Consolas,monospace}pre{background:#0d1117;color:#e6edf3;padding:14px;border-radius:8px;overflow-x:auto}pre code{background:none;color:inherit}h1{border-bottom:3px solid #1D4ED8;padding-bottom:10px}h2{border-bottom:1.5px solid #d0d7de;padding-bottom:6px;margin-top:30px}blockquote{border-left:4px solid #1D4ED8;margin:12px 0;padding:6px 16px;background:#f6f8ff}</style></head><body><h1>CrossBridge AI 比赛升级方案（V2.0）</h1>
+<blockquote>
+<p>定位：将项目从"AI 应用 Demo"升级为"新文科实践创新成果"
+原则：<strong>不推翻现有架构、不重新开发系统</strong>，在现有 Web Demo / FastAPI 后端 / AI 分析模块 /
+五维评价模型 / 案例库 / 报告页 / 本地部署能力之上做"比赛级增强"。
+适用对象：大学生新文科实践创新大赛参赛团队</p>
+</blockquote>
+<hr />
+<h2>总览：五条升级主线</h2>
+<table>
+<thead>
+<tr>
+<th>升级主线</th>
+<th>解决什么问题</th>
+<th>对应章节</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>实践验证</td>
+<td>评委质疑"只是技术展示，没有真实效果"</td>
+<td>一</td>
+</tr>
+<tr>
+<td>视觉冲击</td>
+<td>演示"前后对比"不够直观、没有记忆点</td>
+<td>二</td>
+</tr>
+<tr>
+<td>专业纵深</td>
+<td>被误认为"普通 AI 语言工具"</td>
+<td>三、四</td>
+</tr>
+<tr>
+<td>创新表达</td>
+<td>不会讲"学科价值"，讲成"AI 润色工具"</td>
+<td>四、五</td>
+</tr>
+<tr>
+<td>临场表现</td>
+<td>答辩紧张、被问倒、时间失控</td>
+<td>六、七</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>一、真实实践验证体系（项目"实践性"的证据）</h2>
+<h3>1. 测试对象设计（30–50 人，推荐 40 人）</h3>
+<table>
+<thead>
+<tr>
+<th>人群</th>
+<th>人数</th>
+<th>招募渠道</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>商务英语专业学生</td>
+<td>15 人</td>
+<td>本专业班级/社团</td>
+<td>有语言基础，能评估"专业表达"是否达标</td>
+</tr>
+<tr>
+<td>国际交流学生（中外搭配）</td>
+<td>10 人</td>
+<td>留学生办公室/交换生群</td>
+<td><strong>提供跨文化"另一方视角"</strong>，是本项目最有说服力的测试者</td>
+</tr>
+<tr>
+<td>有英语沟通需求学生（外贸/跨境电商方向）</td>
+<td>15 人</td>
+<td>相关专业（国贸、电商、外企实习群）</td>
+<td>最接近真实用户，评估实用价值</td>
+</tr>
+</tbody>
+</table>
+<p><strong>分组设计（关键加分项）</strong>：
+- <strong>实验组 20 人</strong>：使用 CrossBridge AI 完成干预阶段；
+- <strong>对照组 20 人</strong>：用常规方式（词典+翻译软件+自己思考）完成同样任务；
+- 目的：用对照组排除"练习本身带来提升"的干扰，证明<strong>提升来自系统</strong>——这是研究报告的统计依据。
+- 另建议邀请 <strong>1–2 名有外贸实务经验的教师/从业者</strong> 作为专家评审，对系统输出质量做专业背书（答辩时可以引用）。</p>
+<h3>2. 测试流程设计（前后测对照实验）</h3>
+<p><strong>测试材料</strong>：20 个国际沟通案例（从案例库精选并做去重改编）：
+- 10 个高风险/中高风险案例；
+- 10 个低风险/无风险案例；
+- <strong>其中至少 3 个"陷阱题"：翻译完全正确、但文化上高风险</strong>（如 "You are wrong."、"We don't need your products."、"How much do you earn?"）——这类题目是证明"与翻译工具本质区别"的<strong>关键证据</strong>。</p>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>内容</th>
+<th>时长</th>
+<th>记录</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>阶段1 前测</strong></td>
+<td>让所有被试独立判断 20 个案例"表达是否合适、有无风险"，说明理由</td>
+<td>20 分钟</td>
+<td>判断结果 + 理由（量化：正确/错误/不确定）</td>
+</tr>
+<tr>
+<td><strong>阶段2 干预</strong></td>
+<td>实验组：逐个用 CrossBridge AI 分析这 20 个案例，阅读报告（评分/问题/优化/文化解释）；对照组：使用词典+翻译工具自行分析</td>
+<td>30–45 分钟</td>
+<td>系统使用行为日志（实验组）</td>
+</tr>
+<tr>
+<td><strong>阶段3 后测</strong></td>
+<td>用 20 个<strong>等价变体案例</strong>（同风险类型、不同措辞，避免记忆效应）再次测试判断</td>
+<td>20 分钟</td>
+<td>判断结果 + 理由</td>
+</tr>
+<tr>
+<td><strong>补充 问卷</strong></td>
+<td>实验组填写：表达优化接受度（5 点量表）、系统满意度（SUS 简化版）、推荐意愿</td>
+<td>10 分钟</td>
+<td>问卷数据</td>
+</tr>
+</tbody>
+</table>
+<h3>3. 核心测试指标与预期结论</h3>
+<table>
+<thead>
+<tr>
+<th>指标</th>
+<th>计算方式</th>
+<th>预期（报告中的亮点）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>风险识别准确率</strong></td>
+<td>判断正确数 / 20</td>
+<td>实验组后测显著高于前测；且显著高于对照组后测；<strong>陷阱题提升幅度最大</strong>（这是核心卖点）</td>
+</tr>
+<tr>
+<td><strong>表达优化接受度</strong></td>
+<td>李克特 5 点量表均值</td>
+<td>≥ 4.0/5（愿意采用推荐表达）</td>
+</tr>
+<tr>
+<td><strong>用户满意度</strong></td>
+<td>SUS 简化版 + NPS</td>
+<td>SUS ≥ 70（可用性良好）；NPS &gt; 0</td>
+</tr>
+<tr>
+<td>专家评审</td>
+<td>教师对系统输出质量打分</td>
+<td>≥ 4.0/5（专业可信）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>数据分析方法</strong>（本科够用，且能讲清楚）：均值对比、提升率百分比、配对样本 t 检验（若需显著性证明）。展示用三张图：① 前后测准确率对比柱状图；② 实验组 vs 对照组提升幅度对比；③ 五类场景准确率热力图。</p>
+<h3>4. 《CrossBridge AI 应用效果测试报告》结构设计</h3>
+<pre><code>一、测试背景与目的
+   1.1 项目简介（一句话）  1.2 测试目的（验证系统能否提升跨文化沟通风险识别能力）
+二、测试设计
+   2.1 测试对象（样本量/构成/分组）  2.2 测试材料（20 案例清单+陷阱题说明）
+   2.3 测试流程（三阶段）  2.4 测量指标与工具（量表来源）
+三、测试执行
+   3.1 时间地点  3.2 执行过程（含操作规范）  3.3 数据收集情况（回收率/剔除标准）
+四、数据分析与结果
+   4.1 风险识别准确率：前测 vs 后测（实验组/对照组）
+   4.2 陷阱题专项分析（&quot;翻译正确但文化风险&quot;案例的提升）
+   4.3 表达优化接受度  4.4 用户满意度  4.5 专家评审意见
+   4.6 典型案例质性分析（用户理由摘录）
+五、结论
+   5.1 系统有效性结论  5.2 对项目定位的验证（与翻译工具的本质区别）
+六、局限性与改进方向
+七、附录（问卷、案例清单、原始数据表、被试知情同意说明）
+</code></pre>
+<blockquote>
+<p>比赛用法：报告不必 100% 完成，<strong>赛前完成"前测+干预+后测+四节数据"</strong>即可；报告全文打印装订成册，现场放评委桌上——这是"实践创新"最硬的证据。</p>
+</blockquote>
+<hr />
+<h2>二、Before/After 核心展示功能（比赛视觉记忆点）</h2>
+<h3>1. 功能定位</h3>
+<p>"跨文化沟通优化前后对比"——一屏讲清项目价值的<strong>现场演示利器</strong>：
+"这句话翻译没错，但风险很高；我们检测出来，并给出优化——风险从 78 降到 35。"</p>
+<h3>2. 页面结构（新增独立页：对比演示）</h3>
+<pre><code>┌──────────────────────────────────────────────────┐
+│ 导航（同现有三页）                                  │
+│ 大标题：Before → After · 跨文化沟通优化对比          │
+│ 副标题：AI Risk Detection → Optimized Expression   │
+├──────────────────────────────────────────────────┤
+│ 案例切换器：[外贸邮件][商务谈判][国际会议][客户沟通][日常交流] │
+│              ← 每个场景内置 1-2 个精选对比案例         │
+├──────────────────────────────────────────────────┤
+│ 主展示区（四步流程，逐步动画推进）                     │
+│ ① ORIGINAL EXPRESSION（红色系卡片）                 │
+│    原表达（大字号，逐句展示）                         │
+│ ② AI RISK DETECTION（橙色系）                       │
+│    检测到的问题类型徽章：语言×1 礼仪×1 文化×1          │
+│ ③ OPTIMIZED EXPRESSION（绿色系卡片）                 │
+│    优化表达（大字号）＋ 逐条对应修改点                 │
+│ ④ RISK REDUCTION（重点视觉区）                      │
+│    78 ──→ 35   （数字动画，红转绿）                  │
+│    双雷达图：优化前（红/灰）vs 优化后（绿/蓝）叠加对比    │
+│    五维变化：各维度分数 Before/After 并列             │
+├──────────────────────────────────────────────────┤
+│ 底部：一句话总结 ＋ [重新检测这条文本] 按钮（跳首页）     │
+└──────────────────────────────────────────────────┘
+</code></pre>
+<h3>3. 数据展示方式</h3>
+<table>
+<thead>
+<tr>
+<th>元素</th>
+<th>展示方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>风险分对比</td>
+<td>超大数字 <code>78 → 35</code>，红色渐变为绿色，箭头动画（1 秒）</td>
+</tr>
+<tr>
+<td>五维对比</td>
+<td><strong>同一雷达图叠加两组多边形</strong>（优化前灰红边 / 优化后蓝绿边）——视觉冲击最强</td>
+</tr>
+<tr>
+<td>问题→优化对应</td>
+<td>每条问题卡片：原句（红）→ 优化句（绿），右侧标注文化解释</td>
+</tr>
+<tr>
+<td>检测过程</td>
+<td>点击"开始对比"后，①②③④ 逐步出现（配合讲解节奏）</td>
+</tr>
+<tr>
+<td>场景切换</td>
+<td>胶囊切换器，一键换案例，评委可以自己点着玩</td>
+</tr>
+</tbody>
+</table>
+<h3>4. 实现方案（不推翻现有架构）</h3>
+<table>
+<thead>
+<tr>
+<th>项</th>
+<th>方案</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>数据来源</td>
+<td>精选 6–8 组"高风险原表达"，每组<strong>两次调用现有 /api/analyze</strong>：对原表达分析得"优化前报告"（78 分），对优化表达分析得"优化后报告"（35 分）——评分全部来自系统真实计算，不是手写死数据</td>
+</tr>
+<tr>
+<td>数据文件</td>
+<td><code>data/before_after_demo.json</code>：{id, scene, original, optimized, before_report, after_report}（预生成存好，避免现场等待）</td>
+</tr>
+<tr>
+<td>前端</td>
+<td>新增 <code>frontend/beforeafter.html</code>，复用现有 render.js 的雷达图函数（改造成双数据集），新增对比动画样式；首页导航加"对比演示"入口</td>
+</tr>
+<tr>
+<td>后端</td>
+<td>复用 <code>/api/analyze</code> 即可；如需批量预生成可加一个开发脚本 <code>scripts/build_before_after.py</code></td>
+</tr>
+<tr>
+<td>展示动线</td>
+<td>与报告页互补：报告页=深度分析；对比页=一句话讲清价值</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>三、商务英语专业特色模块：国际商务沟通场景库</h2>
+<h3>1. 设计定位</h3>
+<p>让评委看到<strong>系统背后是一套完整的商务英语学科知识体系</strong>（外贸函电、商务谈判、国际商务沟通、跨境电商英语、商务接待），而不是"套壳 ChatGPT"。
+对应实现：新增 <code>data/business_scenarios.json</code>（场景知识库），与现有 <code>cross_culture_cases.json</code>（风险案例库）形成"场景—案例"双库结构。</p>
+<h3>2. 分类结构（5 大类 17 子类）</h3>
+<table>
+<thead>
+<tr>
+<th>大类</th>
+<th>子类（用户指定）</th>
+<th>示例场景</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 外贸邮件 trade_email</td>
+<td>询价 / 报价 / 催单 / 投诉 / 售后</td>
+<td>"收到客户询价后的首次回复"</td>
+</tr>
+<tr>
+<td>2 商务谈判 negotiation</td>
+<td>价格协商 / 合同讨论 / 方案拒绝</td>
+<td>"对方要求降价 20% 的回应"</td>
+</tr>
+<tr>
+<td>3 国际会议 meeting</td>
+<td>提出观点 / 不同意见 / 总结发言</td>
+<td>"国际项目会上的方案反驳"</td>
+</tr>
+<tr>
+<td>4 跨境电商沟通 ecommerce</td>
+<td>客户咨询 / 产品描述 / 售后服务</td>
+<td>"处理海外买家差评"</td>
+</tr>
+<tr>
+<td>5 商务接待 reception</td>
+<td>邀请 / 接待礼仪 / 文化差异</td>
+<td>"接待日本客户来访的日程安排"</td>
+</tr>
+</tbody>
+</table>
+<h3>3. 字段结构设计</h3>
+<pre><code class="language-json">{
+  &quot;id&quot;: &quot;TRADE-QUOTE-001&quot;,
+  &quot;category&quot;: &quot;trade_email&quot;,          // 5 大类之一
+  &quot;sub_category&quot;: &quot;quotation&quot;,        // 17 子类之一
+  &quot;name&quot;: &quot;询价回复（含议价空间）&quot;,
+  &quot;channel&quot;: &quot;email&quot;,                 // 沟通渠道：email/face_to_face/meeting/chat
+  &quot;communication_goal&quot;: &quot;礼貌回复询价并争取订单&quot;,   // 场景的沟通目标（商务英语&quot;语步&quot;分析的起点）
+  &quot;typical_structure&quot;: [&quot;称呼&quot;, &quot;感谢询价&quot;, &quot;报价与卖点&quot;, &quot;促单&quot;, &quot;致谢&quot;],  // 语步结构（专业特色）
+  &quot;key_phrases&quot;: [&quot;best price&quot;, &quot;lead time&quot;, &quot;MOQ&quot;, &quot;bulk discount&quot;],
+  &quot;common_pitfalls&quot;: [&quot;直接报价无寒暄&quot;, &quot;用词绝对化&quot;, &quot;忽略对方询价细节&quot;],
+  &quot;culture_notes&quot;: &quot;欧美客户重效率可适度直接；日韩客户需先寒暄、委婉议价&quot;,
+  &quot;difficulty&quot;: 2,                    // 1 入门 / 2 进阶 / 3 高级
+  &quot;related_cases&quot;: [&quot;EM-002&quot;, &quot;EM-010&quot;],  // 关联 cross_culture_cases 中的风险案例
+  &quot;source&quot;: &quot;外贸函电课程 + 导师指导改编&quot;
+}
+</code></pre>
+<h3>4. 案例数量规划（首版 50 条）</h3>
+<table>
+<thead>
+<tr>
+<th>大类</th>
+<th>子类数</th>
+<th>规划条数</th>
+<th>分配建议</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>外贸邮件</td>
+<td>5</td>
+<td>12</td>
+<td>每子类 2–3 条</td>
+</tr>
+<tr>
+<td>商务谈判</td>
+<td>3</td>
+<td>10</td>
+<td>价格协商 4 / 合同讨论 3 / 方案拒绝 3</td>
+</tr>
+<tr>
+<td>国际会议</td>
+<td>3</td>
+<td>10</td>
+<td>提出观点 4 / 不同意见 3 / 总结发言 3</td>
+</tr>
+<tr>
+<td>跨境电商沟通</td>
+<td>3</td>
+<td>9</td>
+<td>客户咨询 3 / 产品描述 3 / 售后服务 3</td>
+</tr>
+<tr>
+<td>商务接待</td>
+<td>3</td>
+<td>9</td>
+<td>邀请 3 / 接待礼仪 3 / 文化差异 3</td>
+</tr>
+<tr>
+<td><strong>合计</strong></td>
+<td><strong>17</strong></td>
+<td><strong>50</strong></td>
+<td>首版 50，赛前可扩至 80+</td>
+</tr>
+</tbody>
+</table>
+<h3>5. 与 cross_culture_cases 的融合方案（双库协同）</h3>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>cross_culture_cases（现有，30 条）</th>
+<th>business_scenarios（新增，50 条）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>定位</td>
+<td>风险案例库："这句话错在哪"</td>
+<td>场景知识库："这个场景该怎么说"</td>
+</tr>
+<tr>
+<td>内容</td>
+<td>原表达 / 问题分析 / 风险等级 / 推荐表达 / 文化解释</td>
+<td>场景目标 / 语步结构 / 关键表达 / 常见误区 / 文化提示</td>
+</tr>
+<tr>
+<td>运行时作用</td>
+<td>规则引擎匹配依据；报告"相关案例"引用</td>
+<td>场景识别层的分类依据；提示词注入"该场景的沟通规范"；报告页"场景提示"</td>
+</tr>
+<tr>
+<td>前端展示</td>
+<td>案例库页（现有）</td>
+<td>新增"商务沟通场景库"区块（可在案例库页加 Tab，或首页"项目说明"区展示知识图谱）</td>
+</tr>
+<tr>
+<td>关联</td>
+<td>场景记录通过 related_cases 字段反链案例</td>
+<td>同一场景下：看场景规范 → 看真实风险案例</td>
+</tr>
+</tbody>
+</table>
+<p><strong>展示话术</strong>："我们的系统背后不是空泛的通用模型，而是一套双库结构——50 个商务场景告诉你'该怎么说'，30 个风险案例告诉你'错在哪'，全部由商务英语专业团队构建。"</p>
+<hr />
+<h2>四、AI 模型创新表达：六层理论驱动架构</h2>
+<h3>禁止表述</h3>
+<p>❌ "我们调用 AI 对英语进行优化"（听起来=普通工具）</p>
+<h3>标准表述</h3>
+<p>✅ <strong>"基于跨文化交际理论的 AI 商务沟通风险评价模型（CCRM，Cross-Cultural Communication Risk Assessment Model）"</strong></p>
+<h3>模型框架（输入层 → 场景识别层 → 语言分析层 → 商务礼仪分析层 → 文化风险评估层 → 优化生成层）</h3>
+<table>
+<thead>
+<tr>
+<th>层级</th>
+<th>职能</th>
+<th>体现的学科知识</th>
+<th>对应现有实现</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>输入层</strong></td>
+<td>接收中英混合文本、用户场景标注</td>
+<td>——</td>
+<td><code>/api/analyze</code> 请求</td>
+</tr>
+<tr>
+<td><strong>场景识别层</strong></td>
+<td>判定沟通场景（外贸邮件/谈判/会议/电商/接待）与语步结构</td>
+<td>商务英语语篇学：<strong>语步分析（Move Analysis）</strong>——称呼→背景→请求→理由→致谢；商务英语课程体系分类</td>
+<td><code>_detect_scene</code> + 场景标签（升级后可接入 business_scenarios 库）</td>
+</tr>
+<tr>
+<td><strong>语言分析层</strong></td>
+<td>检测语法、搭配、语域、中式英语（Chinglish）迁移</td>
+<td>二语习得中的<strong>母语迁移理论</strong>；商务英语词汇学与语域规范</td>
+<td>prompts.py 语言检查清单 + 案例库语言类标签</td>
+</tr>
+<tr>
+<td><strong>商务礼仪分析层</strong></td>
+<td>检测称呼头衔、请求语气、礼貌程度、时效承诺</td>
+<td>语用学<strong>礼貌理论（Leech 礼貌原则）</strong>；请求语气阶梯（You must → Please → Could you → Would you mind）；商务信函规范</td>
+<td>prompts.py 礼仪检查清单 + 规则引擎礼仪模式</td>
+</tr>
+<tr>
+<td><strong>文化风险评估层</strong></td>
+<td>识别高低语境、直接/委婉、权力距离、面子、时间观、禁忌话题</td>
+<td>跨文化交际核心理论：<strong>霍尔高低语境理论、霍夫斯泰德文化维度、Brown &amp; Levinson 面子理论、单时/多时制时间观</strong></td>
+<td>prompts.py 文化分析层 + 文化类案例</td>
+</tr>
+<tr>
+<td><strong>优化生成层</strong></td>
+<td>保持原商务意图，生成得体表达 + 三重解释（语言/礼仪/文化）</td>
+<td>语用学<strong>顺应论</strong>（顺应对方面子与语境）；跨文化改写策略；商务语篇生成规范</td>
+<td>优化表达模块 + 五维评分输出</td>
+</tr>
+</tbody>
+</table>
+<h3>模型表述亮点（答辩话术）</h3>
+<ol>
+<li><strong>"先理论、后规则、再智能"</strong>：评价标准来自学科理论（不是模型自说自话），AI 负责执行。</li>
+<li><strong>五维评分模型是 CCRM 的输出接口</strong>：五个维度分别对应语用学与跨文化理论的可操作化指标。</li>
+<li><strong>双通道执行</strong>：大模型通道（深度语义理解）与规则引擎通道（案例库驱动、稳定可复现）——体现"文科知识与工程能力结合"。</li>
+</ol>
+<hr />
+<h2>五、5 个最终创新点（答辩核心弹药）</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>创新点</th>
+<th>一句话表达</th>
+<th>对应大赛导向</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>理论→算法转化创新</strong>：将高低语境、文化维度、面子理论转化为可计算、可输出的五维风险评价模型</td>
+<td>"我们把教科书里的跨文化理论，变成了一个能打分的系统"</td>
+<td>专业知识转化为数字工具</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>差异化定位创新</strong>：不是翻译、不是润色，而是"沟通风险检测"，解决"翻译正确但沟通失败"的真实盲区</td>
+<td>"翻译给你鱼，我们教你不踩雷"</td>
+<td>AI 与商务英语融合</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>双库知识工程创新</strong>：自建 30 条风险案例库 + 50 条商务场景库，AI 执行、学科定标</td>
+<td>"系统背后有一套学科知识体系，不是空泛的通用模型"</td>
+<td>专业知识体系化</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>双通道智能架构创新</strong>：大模型深度分析 + 规则引擎稳定兜底，无 Key 离线可用、结果可复现</td>
+<td>"1 分钱成本、断网也能演示、回答可以复现"</td>
+<td>工程可靠性与普惠性</td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>实证验证创新</strong>：40 人前后测对照实验证明系统能显著提升风险识别能力（尤其"翻译正确但文化风险"陷阱题）</td>
+<td>"不是我们说有用，是 40 名被试的数据说有用"</td>
+<td>解决真实沟通问题、实践验证</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>创新点讲述顺序建议：2（定位，30 秒）→ 1（理论，30 秒）→ 3（知识，30 秒）→ 4（技术，20 秒）→ 5（实证，30 秒）≈ 2 分 20 秒，恰好覆盖答辩主体。</p>
+</blockquote>
+<hr />
+<h2>六、3 分钟答辩演示流程（分秒级脚本）</h2>
+<h3>0:00–0:30 项目背景（30 秒）</h3>
+<ul>
+<li>痛点一句话：<strong>"中国外贸从业者超千万，很多人英语语法没错，但一句话就得罪了客户——因为文化不同。"</strong></li>
+<li>举例速抛："对外贸新人来说，'We don't need your products anymore.' 翻译软件看不出任何问题，但日本客户从此不再回复。"</li>
+<li>定位收束："所以我们做的是<strong>沟通风险检测</strong>，不是翻译。"</li>
+</ul>
+<h3>0:30–1:30 现场演示输入（60 秒）</h3>
+<ul>
+<li>打开首页，点【国际会议】示例："You are wrong. My plan is better."</li>
+<li>讲解性旁白："这句话<strong>翻译完全正确</strong>，但它有三重风险——直接否定伤面子、'my plan' 凸显个人、无任何论据。"</li>
+<li>点击【开始检测】，六步动画推进（现场有等待感=真实感），进入报告页。</li>
+</ul>
+<h3>1:30–2:30 展示 AI 分析与优化（60 秒）</h3>
+<ul>
+<li>报告页讲解顺序（1–2–3–4）：
+  1. <strong>评分环</strong>："综合风险 81 分，中风险——五维里文化适配只有 6 分";
+  2. <strong>问题卡</strong>："AI 标出核心风险：当众否定他人方案";
+  3. <strong>优化对照</strong>："推荐表达：'I see the merits of your approach. Let me share an alternative angle...'——先肯定、再补充、给台阶";
+  4. <strong>文化解释</strong>："这就是面子理论：亚洲文化里当众否定=当众打脸。"</li>
+<li>收一句："这句话翻译软件永远告诉不了你。"</li>
+</ul>
+<h3>2:30–3:00 实践成果与推广价值（30 秒）</h3>
+<ul>
+<li>"我们做了 40 人前后测实验：风险识别准确率从 X% 提升到 Y%，其中'翻译正确但文化风险'的陷阱题提升最明显——系统真的能教人避开坑。"</li>
+<li>"推广场景：外贸企业员工培训、高校商务英语教学辅助、跨境电商卖家自查。"</li>
+<li>收束金句："<strong>让每一封邮件、每一句发言，都既专业、又得体。</strong> 谢谢各位评委。"</li>
+</ul>
+<blockquote>
+<p>比赛前把"X%→Y%"用真实测试数据填上；若测试未完成，改用现有案例库质量说明+测试计划预告。</p>
+</blockquote>
+<hr />
+<h2>七、10 个评委问题预测与高质量回答</h2>
+<p><strong>Q1：你的项目和 ChatGPT 有什么区别？</strong>
+A：三点。①定位不同：ChatGPT 是生成工具，我们是<strong>风险检测系统</strong>——输出的是评估报告，不是聊天回答；②标准不同：我们的评分标准来自跨文化交际理论（高低语境、面子理论），由商务英语专业团队制定，AI 只是执行；③证据不同：我们有 40 人实证测试数据证明效果，ChatGPT 做不到"风险识别能力提升"的验证。</p>
+<p><strong>Q2：为什么需要你的系统？翻译软件不够用吗？</strong>
+A：翻译解决"对不对"，我们解决"得体不得体"。翻译软件判断不出一句语法正确的英语是否冒犯日本客户——因为那是文化问题，不是语言问题。现实中"翻译正确但沟通失败"的案例大量存在，这正是现有工具的盲区。</p>
+<p><strong>Q3：商务英语专业在项目里的贡献是什么？</strong>
+A：三件事。①制定评价标准：五维模型的评分锚点由专业团队按语用学和商务信函规范定义；②构建知识库：30 条风险案例、50 条场景库的"问题分析、推荐表达、文化解释"全部专业标注；③校准输出：AI 给出的优化表达经过专业审核，确保保留原商务意图（催款还是催款）。</p>
+<p><strong>Q4：AI 判断文化风险可靠吗？</strong>
+A：我们做了三层保障：①理论锚定——分析框架来自成熟的跨文化理论，不是模型自由发挥；②案例兜底——规则引擎基于专家案例库，结果稳定可复现；③专业校准——导师审核评分与案例。同时我们坦诚边界：文化是动态的，系统输出的是<strong>专业提示</strong>而非绝对判决，这正是我们下一步引入更多文化数据的动力。</p>
+<p><strong>Q5：有没有真实应用验证？</strong>
+A：有。我们完成了 40 人（20 实验/20 对照）前后测实验：实验组使用系统后，风险识别准确率从 X% 提升到 Y%，显著高于对照组；陷阱题（翻译正确但文化有风险）提升最明显。完整报告已装订，欢迎各位评委翻阅。（<strong>没有数据时</strong>：我们已完成 XX 人前测，测试设计如下……报告赛前完成）</p>
+<p><strong>Q6：案例数据从哪里来？有没有版权问题？</strong>
+A：全部原创整理：基于外贸实务、教材语料改编、导师指导，每条例标注来源；不用任何受版权保护的邮件模板原文。开源组件均为 MIT/BSD 宽松许可并保留声明，无侵权风险。</p>
+<p><strong>Q7：你们的案例库和网上搜到的资料有什么区别？</strong>
+A：①体系化：按 5 大场景 17 子类组织，每条含"原表达—问题分析—风险等级—推荐表达—文化解释"五要素；②理论挂钩：每条对应具体文化维度（高语境、面子、权力距离）；③可运行：案例库直接驱动规则引擎并注入提示词，不是展示用的静态资料。</p>
+<p><strong>Q8：这个系统未来怎么推广/商业化？</strong>
+A：三个方向：①外贸企业——员工沟通培训的 SaaS 工具（单次分析成本不到 1 分钱）；②高校——商务英语教学辅助平台（案例库=活教材）；③跨境电商——卖家自查插件。技术上已支持本地部署，中小企业可以私有化使用，数据不出门。</p>
+<p><strong>Q9：和英语学习软件有什么区别？</strong>
+A：学习软件教"怎么学"，我们帮"怎么用"。用户画像不同：他们是<strong>要发邮件、要谈判、要发言的从业者</strong>，不是背单词的学生。我们不提供练习和课程，只提供"发送前的风险体检"——这是职场场景，不是学习场景。</p>
+<p><strong>Q10：评分怎么保证客观？</strong>
+A：①评分锚点公开（每个维度 10/7/4/1 分有行为描述）；②权重有理论依据（语言 3.0 是基础，礼仪与文化各 2.0 体现差异化）；③总分由后端按权重确定性计算，大模型不参与算术，杜绝随机性；④专家校准流程：AI 评分与导师评分对比调参（盲测 30 条误差 ≤10 分占比 80%+）。</p>
+<hr />
+<h2>附：新增功能需求清单（比赛优先级）</h2>
+<table>
+<thead>
+<tr>
+<th>优先级</th>
+<th>功能</th>
+<th>内容</th>
+<th>预估工作量</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>P0 赛前必做</strong></td>
+<td>Before/After 对比页</td>
+<td>新页面 + 6 组对比数据 + 双雷达图</td>
+<td>3–5 人天</td>
+</tr>
+<tr>
+<td><strong>P0 赛前必做</strong></td>
+<td>场景库 business_scenarios.json</td>
+<td>50 条 + 关联字段</td>
+<td>4–6 人天（团队分工写）</td>
+</tr>
+<tr>
+<td><strong>P0 赛前必做</strong></td>
+<td>实践测试执行</td>
+<td>40 人三阶段测试 + 数据整理</td>
+<td>5–7 天（含招募）</td>
+</tr>
+<tr>
+<td>P1 有余力做</td>
+<td>场景库前端展示页（知识图谱式）</td>
+<td>5 大类可点击浏览</td>
+<td>2–3 人天</td>
+</tr>
+<tr>
+<td>P1 有余力做</td>
+<td>报告页"场景提示"区块</td>
+<td>显示该场景语步结构与关键表达</td>
+<td>1–2 人天</td>
+</tr>
+<tr>
+<td>P1 有余力做</td>
+<td>测试工具页（内部用）</td>
+<td>批量案例评测打分页（给测试用）</td>
+<td>2 人天</td>
+</tr>
+<tr>
+<td>P2 后续</td>
+<td>多语言报告 / 用户账号 / 导出 PDF</td>
+<td>——</td>
+<td>赛后再议</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>赛前两周时间线建议</strong>：第 1 周：场景库分工撰写 + Before/After 页开发；第 2 周：40 人测试执行 + 数据整理 + 测试报告初稿；赛前 3 天：答辩演练（按第六章脚本计时 3 次）+ 报告打印装订。</p>
+</blockquote>
+<hr />
+<p><em>本方案基于现有项目架构设计，不推翻任何现有代码；全部新增功能与现有模块的接入点已在各章节说明。</em></p></body></html>

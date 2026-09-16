@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>案例库 · 桥通售后</title>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<!-- 离线演示模式横幅 -->
+<div id="offlineBanner" style="display:none;background:#FFF7ED;border-bottom:1px solid #FDBA74;color:#9A3412;font-size:13px;text-align:center;padding:8px 16px">
+  ⚡ 离线演示模式：未连接分析服务，当前展示内置示例案例（启动后端即可查看完整 30 条案例库）
+</div>
+
+<!-- 顶部导航 -->
+<nav class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="index.html">
+      <svg width="34" height="26" viewBox="0 0 48 32" fill="none" aria-hidden="true">
+        <defs>
+          <linearGradient id="bridgeG" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#1D4ED8"/><stop offset="1" stop-color="#0EA5E9"/>
+          </linearGradient>
+        </defs>
+        <path d="M4 28 Q24 2 44 28" stroke="url(#bridgeG)" stroke-width="6" stroke-linecap="round"/>
+        <line x1="13" y1="20" x2="13" y2="31" stroke="#1E3A8A" stroke-width="5" stroke-linecap="round"/>
+        <line x1="35" y1="20" x2="35" y2="31" stroke="#1E3A8A" stroke-width="5" stroke-linecap="round"/>
+      </svg>
+      <span class="brand-name">CrossBridge <span>AI</span></span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="打开菜单"><span></span><span></span><span></span></button>
+    <div class="nav-links">
+      <a class="nav-link" href="index.html">风险检测</a>
+      <a class="nav-link" href="diagnosis.html">沟通诊断</a>
+      <a class="nav-link" href="comparison.html">对比优化</a>
+      <a class="nav-link" href="model.html">模型说明</a>
+      <a class="nav-link" href="cases.html">案例库</a>
+    </div>
+  </div>
+</nav>
+
+<main class="container">
+
+  <!-- 页头 -->
+  <section class="cases-head">
+    <div>
+      <p class="eyebrow">Cross-cultural Business Knowledge Base</p>
+      <h1 class="section-title" style="font-size:26px;margin-top:4px">跨境电商跨文化沟通知识库</h1>
+      <p class="section-sub">聚焦跨境电商高频沟通场景（询盘/报价/谈判/投诉/售后）<br>每条案例完整标注：场景 / 原表达 / 风险等级 / 问题原因 / 优化表达 / 文化解释</p>
+    </div>
+    <div class="cases-stats">
+      <div class="stat-chip"><b class="tabular">30</b><span>首版已收录</span></div>
+      <div class="stat-chip"><b class="tabular">100</b><span>规划总数</span></div>
+      <div class="stat-chip"><b>5</b><span>大场景覆盖</span></div>
+    </div>
+  </section>
+
+  <!-- 分类筛选 -->
+  <section class="cases-filter">
+    <div class="pills" id="caseFilter">
+      <button class="pill active" data-filter="all">全部</button>
+      <button class="pill" data-filter="email">商务邮件</button>
+      <button class="pill" data-filter="negotiation">商务谈判</button>
+      <button class="pill" data-filter="meeting">国际会议</button>
+      <button class="pill" data-filter="customer">客户沟通</button>
+      <button class="pill" data-filter="daily">日常交流</button>
+    </div>
+    <div class="pills" id="sourceFilter" style="margin-top:12px">
+      <button class="pill active" data-source-filter="all">全部来源</button>
+      <button class="pill" data-source-filter="国际贸易邮件">国际贸易邮件</button>
+      <button class="pill" data-source-filter="跨境电商沟通">跨境电商沟通</button>
+      <button class="pill" data-source-filter="企业商务案例">企业商务案例</button>
+      <button class="pill" data-source-filter="商务英语教学案例">商务英语教学案例</button>
+    </div>
+    <div class="case-search">
+      <input type="text" id="caseSearch" class="search-input" placeholder="搜索案例：原表达 / 优化表达 / 文化解释…">
+      <span class="demo-hint" id="caseCount">共 0 条案例</span>
+    </div>
+  </section>
+
+  <!-- 案例卡片网格 -->
+  <section class="cases-grid" id="caseGrid">
+
+    <article class="card card-hover case-card" data-scenario="email">
+      <div class="case-head">
+        <span class="tag tag-blue">商务邮件</span>
+        <span class="badge badge-mh">中高风险</span>
+      </div>
+      <div class="case-orig">"You must send us the samples before Friday."</div>
+      <div class="case-label">RISK · 风险</div>
+      <p style="font-size:13px;color:var(--text-2);margin-top:4px">命令式语气（You must）在商务邮件中属明显失礼，缺少请求缓冲与时限协商空间。</p>
+      <div class="case-label" style="color:var(--risk-low)">OPTIMIZED · 优化表达</div>
+      <div class="case-new">"Could you please send the samples by Friday? Your timely support would be greatly appreciated."</div>
+      <div class="case-cult">💡 把命令改为请求并致谢，既明确时限又维护双方关系；对欧美客户避免强势命令，对亚洲客户尤其重要。</div>
+    </article>
+
+    <article class="card card-hover case-card" data-scenario="email">
+      <div class="case-head">
+        <span class="tag tag-blue">商务邮件</span>
+        <span class="badge badge-high">高风险</span>
+      </div>
+      <div class="case-orig">"We don't need your products anymore."</div>
+      <div class="case-label">RISK · 风险</div>
+      <p style="font-size:13px;color:var(--text-2);margin-top:4px">绝对化、直接化否定，伤害对方面子并切断合作可能，关系导向文化中尤其危险。</p>
+      <div class="case-label" style="color:var(--risk-low)">OPTIMIZED · 优化表达</div>
+      <div class="case-new">"We truly appreciate our past cooperation. As our current needs have changed, we may not be able to place further orders at this time. We hope to keep in touch."</div>
+      <div class="case-cult">💡 三段式"肯定过去→客观理由→留有余地"，把拒绝变成"暂时调整"，保护长期关系。</div>
+    </article>
+
+    <article class="card card-hover case-card" data-scenario="negotiation">
+      <div class="case-head">
+        <span class="tag tag-purple">商务谈判</span>
+        <span class="badge badge-high">高风险</span>
+      </div>
+      <div class="case-orig">"Your price is unacceptable. We will find another supplier."</div>
+      <div class="case-label">RISK · 风险</div>
+      <p style="font-size:13px;color:var(--text-2);margin-top:4px">以"另寻供应商"施压是谈判大忌：既否定对方又关闭谈判桌，易导致关系破裂。</p>
+      <div class="case-label" style="color:var(--risk-low)">OPTIMIZED · 优化表达</div>
+      <div class="case-new">"We value our cooperation. Could you kindly share how the price is structured? We'd like to explore a solution that works for both sides."</div>
+      <div class="case-cult">💡 先表达重视，再用开放式提问了解价格构成——把对抗转为共同解决问题，是国际谈判的"双赢"策略。</div>
+    </article>
+
+    <article class="card card-hover case-card" data-scenario="negotiation">
+      <div class="case-head">
+        <span class="tag tag-purple">商务谈判</span>
+        <span class="badge badge-mh">中高风险</span>
+      </div>
+      <div class="case-orig">"We must sign the contract today, no exceptions."</div>
+      <div class="case-label">RISK · 风险</div>
+      <p style="font-size:13px;color:var(--text-2);margin-top:4px">时间压迫式收尾（最后通牒）在多数文化中被视为不尊重对方决策流程。</p>
+      <div class="case-label" style="color:var(--risk-low)">OPTIMIZED · 优化表达</div>
+      <div class="case-new">"To move forward efficiently, could we aim to finalize the contract by this Friday? Please let us know if you need more time."</div>
+      <div class="case-cult">💡 给目标日期同时给对方"请求延期的权利"，尊重不同文化的决策节奏（如日本企业内部合议周期长）。</div>
+    </article>
+
+    <article class="card card-hover case-card" data-scenario="meeting">
+      <div class="case-head">
+        <span class="tag tag-cyan">国际会议</span>
+        <span class="badge badge-high">高风险</span>
+      </div>
+      <div class="case-orig">"You are wrong. My plan is better."</div>
+      <div class="case-label">RISK · 风险</div>
+      <p style="font-size:13px;color:var(--text-2);margin-top:4px">当众否定他人方案伤及"面子"（尤其亚洲与会者），且"my plan"凸显个人而非团队。</p>
+      <div class="case-label" style="color:var(--risk-low)">OPTIMIZED · 优化表达</div>
+      <div class="case-new">"I see the merits of your approach. Let me share an alternative angle that could complement it, and we can compare the two."</div>
+      <div class="case-cult">💡 先肯定再补充，"互补"而非"对立"；把个人方案转化为集体讨论，符合会议文化的协作原则。</div>
+    </article>
+
+    <article class="card card-hover case-card" data-scenario="meeting">
+      <div class="case-head">
+        <span class="tag tag-cyan">国际会议</span>
+        <span class="badge badge-ml">中低风险</span>
+      </div>
+      <div class="case-orig">"Wait, let me talk first."</div>
+      <div class="case-label">RISK · 风险</div>
+      <p style="font-size:13px;color:var(--text-2);margin-top:4px">粗暴打断发言人，在注重秩序与轮次的文化（北欧、日韩）中会被视为不专业。</p>
+      <div class="case-label" style="color:var(--risk-low)">OPTIMIZED · 优化表达</div>
+      <div class="case-new">"May I add a brief point on this? I'll keep it short so we can return to your topic."</div>
+      <div class="case-cult">💡 请求插话 + 承诺简短 + 归还话题权，既表达观点又不破坏发言秩序。</div>
+    </article>
+
+    <article class="card card-hover case-card" data-scenario="customer">
+      <div class="case-head">
+        <span class="tag tag-gray">客户沟通</span>
+        <span class="badge badge-mh">中高风险</span>
+      </div>
+      <div class="case-orig">"The delay is not our fault. Our supplier made the mistake."</div>
+      <div class="case-label">RISK · 风险</div>
+      <p style="font-size:13px;color:var(--text-2);margin-top:4px">责任推诿让客户感到不被重视；客户要的是解决方案而非归责游戏。</p>
+      <div class="case-label" style="color:var(--risk-low)">OPTIMIZED · 优化表达</div>
+      <div class="case-new">"We sincerely apologize for the delay. We are working closely with our supply chain to resolve it, and we will provide a confirmed schedule within 48 hours."</div>
+      <div class="case-cult">💡 道歉 + 行动承诺 + 明确时间点：国际客户沟通的黄金公式，把负面事件转化为信任建立。</div>
+    </article>
+
+    <article class="card card-hover case-card" data-scenario="daily">
+      <div class="case-head">
+        <span class="tag tag-gray">日常交流</span>
+        <span class="badge badge-ml">中低风险</span>
+      </div>
+      <div class="case-orig">"How much do you earn per month?"</div>
+      <div class="case-label">RISK · 风险</div>
+      <p style="font-size:13px;color:var(--text-2);margin-top:4px">薪资、年龄、婚恋等在多数西方文化属隐私话题，直接询问非常失礼。</p>
+      <div class="case-label" style="color:var(--risk-low)">OPTIMIZED · 优化表达</div>
+      <div class="case-new">"How's your business going these days?"（或转移至公共话题）</div>
+      <div class="case-cult">💡 用开放式寒暄替代隐私探问；跨文化交际中"安全话题"（天气、行业动态、旅行）是破冰首选。</div>
+    </article>
+
+  </section>
+
+  <p class="case-empty" id="caseEmpty">该分类暂无案例展示（完整 100 条案例建设中）</p>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <svg width="22" height="16" viewBox="0 0 48 32" fill="none" aria-hidden="true">
+        <path d="M4 28 Q24 2 44 28" stroke="#1D4ED8" stroke-width="6" stroke-linecap="round"/>
+        <line x1="13" y1="20" x2="13" y2="31" stroke="#1E3A8A" stroke-width="5" stroke-linecap="round"/>
+        <line x1="35" y1="20" x2="35" y2="31" stroke="#1E3A8A" stroke-width="5" stroke-linecap="round"/>
+      </svg>
+      <span>桥通售后 · 跨文化商务沟通风险智能检测助手</span>
+    </div>
+    <div class="footer-note">AI + 商务英语 + 跨文化交际 · 新文科实践创新项目 · Demo 原型</div>
+  </div>
+</footer>
+
+<script src="assets/js/mockdata.js"></script>
+<script src="assets/js/api.js"></script>
+<script src="assets/js/render.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
+

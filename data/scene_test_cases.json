@@ -1,0 +1,344 @@
+{
+  "version": "1.0",
+  "description": "CrossBridge AI 商务场景测试案例库（20 条，覆盖 5 大高频风险场景）",
+  "total": 22,
+  "categories": {
+    "email_urge": 4,
+    "price_negotiation": 4,
+    "plan_rejection": 4,
+    "customer_complaint": 4,
+    "business_invitation": 4,
+    "meeting_probe": 2
+  },
+  "cases": [
+    {
+      "id": "SC-URG-001",
+      "category": "email_urge",
+      "name": "邮件催促·催款",
+      "original_expression": "We are still waiting for your payment. Please pay immediately.",
+      "risk_level": "high",
+      "problem_analysis": "① 催促生硬，'Please pay immediately' 缺乏背景说明与礼貌缓冲；② 未给出发票号与到期日，对方无法快速核对；③ 直接施压容易激起对抗。",
+      "recommended_expression": "Dear Mr. Chen,\n\nWe noticed that payment for invoice INV-2025-01 (due [日期]) has not yet reached us. Could you kindly check on the status? We are happy to help resolve any issue.",
+      "culture_explanation": "催款公式：问候 → 事实（发票号/到期日）→ 礼貌请求 → 给台阶。直接命令在关系导向文化中会被视为'撕破脸'。",
+      "match_keywords": [
+        "waiting for your payment",
+        "pay immediately",
+        "please pay"
+      ],
+      "issue_type": "etiquette"
+    },
+    {
+      "id": "SC-URG-002",
+      "category": "email_urge",
+      "name": "邮件催促·跟进质问",
+      "original_expression": "Why haven't you replied to our emails?",
+      "risk_level": "high",
+      "problem_analysis": "质问式（Why haven't you...）带有指责意味，让对方产生防御心理；未提供上下文与行动请求。",
+      "recommended_expression": "I wanted to follow up on my previous messages regarding [主题]. When you have a moment, could you let us know your thoughts?",
+      "culture_explanation": "跟进的艺术：引用上下文、给对方'有空时再说'的缓冲。质问式表达在任何文化中都会触发防御。",
+      "match_keywords": [
+        "why haven't you",
+        "replied to our emails"
+      ],
+      "issue_type": "etiquette"
+    },
+    {
+      "id": "SC-URG-003",
+      "category": "email_urge",
+      "name": "邮件催促·订单确认",
+      "original_expression": "Please confirm the order ASAP.",
+      "risk_level": "medium_low",
+      "problem_analysis": "ASAP 含义模糊（不同文化理解差异大），未给出具体截止日期与理由。",
+      "recommended_expression": "Could you please confirm the order by [具体日期]? This will allow us to schedule production and meet your delivery expectations.",
+      "culture_explanation": "时间观差异：单时制文化期待精确日期，多时制文化对时间灵活——给日期+理由才能对齐预期。",
+      "match_keywords": [
+        "confirm the order",
+        "asap"
+      ],
+      "issue_type": "etiquette"
+    },
+    {
+      "id": "SC-URG-004",
+      "category": "email_urge",
+      "name": "邮件催促·样本催要",
+      "original_expression": "We need the samples this week. No more delays!",
+      "risk_level": "high",
+      "problem_analysis": "'No more delays!' 带情绪化指责，把催促变成责怪；未说明原因与后果，缺乏合作姿态。",
+      "recommended_expression": "We would greatly appreciate it if the samples could reach us by [日期], as our client's review meeting is scheduled then. Could you confirm the shipping date?",
+      "culture_explanation": "给'为什么急'（客户会议节点）让对方理解紧迫性，用请求代替命令，催得动又不得罪人。",
+      "match_keywords": [
+        "no more delays",
+        "samples this week"
+      ],
+      "issue_type": "etiquette"
+    },
+    {
+      "id": "SC-PRC-001",
+      "category": "price_negotiation",
+      "name": "报价谈判·压价威胁",
+      "original_expression": "Your price is too high. We will go to other suppliers.",
+      "risk_level": "high",
+      "problem_analysis": "① 'too high' 主观否定；② 'go to other suppliers' 是威胁式施压，等于关闭谈判桌；③ 未给出期望价格与理由。",
+      "recommended_expression": "We value our cooperation. However, the current price exceeds our budget. Could you kindly share how the price is structured? We would like to explore a solution that works for both sides.",
+      "culture_explanation": "谈判是共同解决问题而非击败对方：开放式提问把对抗转为合作，威胁只会触发对立。",
+      "match_keywords": [
+        "too high",
+        "go to other suppliers",
+        "other suppliers"
+      ],
+      "issue_type": "culture"
+    },
+    {
+      "id": "SC-PRC-002",
+      "category": "price_negotiation",
+      "name": "报价谈判·最后通牒",
+      "original_expression": "Give us a 15% discount or we walk away.",
+      "risk_level": "high",
+      "problem_analysis": "最后通牒式威胁，未提供任何交换条件（订单量/长期合作），变成单纯压迫；'Give us' 命令式。",
+      "recommended_expression": "Given our projected order volume of [数量], could you kindly consider a 15% adjustment? We believe this would support a long-term partnership.",
+      "culture_explanation": "让步要'交换'不要'威胁'：用订单量等理由换取让步，给对方'为什么可以降价'的依据。",
+      "match_keywords": [
+        "walk away",
+        "15% discount",
+        "or we walk"
+      ],
+      "issue_type": "etiquette"
+    },
+    {
+      "id": "SC-PRC-003",
+      "category": "price_negotiation",
+      "name": "报价谈判·对比压价",
+      "original_expression": "Can you match our competitor's price?",
+      "risk_level": "medium",
+      "problem_analysis": "直接搬出竞争对手压价，缺乏礼貌与依据；未说明差距金额，对方无从评估。",
+      "recommended_expression": "We have received quotes from other suppliers in the range of [金额]. Could you kindly review whether there is any flexibility in your pricing?",
+      "culture_explanation": "用客观信息（其他报价区间）代替直接比较，给对方评估空间；'review flexibility' 是礼貌议价句式。",
+      "match_keywords": [
+        "competitor's price",
+        "match our"
+      ],
+      "issue_type": "culture"
+    },
+    {
+      "id": "SC-PRC-004",
+      "category": "price_negotiation",
+      "name": "报价谈判·合理询价",
+      "original_expression": "We think your quotation is reasonable, but could you share the breakdown?",
+      "risk_level": "low",
+      "problem_analysis": "表达得体：先肯定报价合理，再礼貌请求明细，体现尊重与合作诚意。（此例为低风险正面样例）",
+      "recommended_expression": "We think your quotation is reasonable. To help us present it to our management, could you kindly share a detailed breakdown of the costs?",
+      "culture_explanation": "正面样例：肯定+理由+请求，是国际商务询价的范式，低风险可放心使用。",
+      "match_keywords": [
+        "share the breakdown",
+        "quotation is reasonable"
+      ],
+      "issue_type": "language"
+    },
+    {
+      "id": "SC-REJ-001",
+      "category": "plan_rejection",
+      "name": "拒绝方案·全盘否定",
+      "original_expression": "Your proposal is completely wrong.",
+      "risk_level": "high",
+      "problem_analysis": "全盘否定他人方案，严重伤及'面子'；未给出具体问题与替代方向，沟通无法推进。",
+      "recommended_expression": "Thank you for sharing your proposal. We see potential in some aspects. However, [具体问题] may need further discussion. Could we explore adjustments together?",
+      "culture_explanation": "拒绝公式：感谢 → 肯定部分价值 → 具体问题 → 共同解决。面子文化中'先肯定再否定'是专业素养。",
+      "match_keywords": [
+        "completely wrong",
+        "your proposal is"
+      ],
+      "issue_type": "culture"
+    },
+    {
+      "id": "SC-REJ-002",
+      "category": "plan_rejection",
+      "name": "拒绝方案·绝对化拒绝",
+      "original_expression": "We don't accept this plan at all.",
+      "risk_level": "medium_high",
+      "problem_analysis": "'at all' 绝对化否定，不留讨论空间；未说明原因与替代方向。",
+      "recommended_expression": "While we appreciate the effort behind this plan, our current priorities are focused on [方向]. Could we revisit this idea after [节点]?",
+      "culture_explanation": "委婉拒绝：肯定努力 → 客观原因 → 未来窗口。'暂不采纳但保留窗口'保全双方关系。",
+      "match_keywords": [
+        "don't accept this plan",
+        "at all"
+      ],
+      "issue_type": "culture"
+    },
+    {
+      "id": "SC-REJ-003",
+      "category": "plan_rejection",
+      "name": "拒绝方案·打击提案",
+      "original_expression": "This idea won't work in our company.",
+      "risk_level": "medium_high",
+      "problem_analysis": "'won't work' 直接判死刑，打击提案者积极性；未给出具体障碍。",
+      "recommended_expression": "This idea has potential. One challenge we may face is [具体障碍]. How might we address that in our context?",
+      "culture_explanation": "建设性质疑：肯定潜力 → 具体障碍 → 邀请解决。把'不可能'变成'如何可能'。",
+      "match_keywords": [
+        "won't work"
+      ],
+      "issue_type": "culture"
+    },
+    {
+      "id": "SC-REJ-004",
+      "category": "plan_rejection",
+      "name": "拒绝方案·礼貌选择",
+      "original_expression": "I understand your suggestion, but we prefer to go with option B.",
+      "risk_level": "low",
+      "problem_analysis": "表达得体：先理解对方建议，再说明选择理由，给出明确方向。（低风险正面样例）",
+      "recommended_expression": "I understand your suggestion and appreciate the thinking behind it. After careful review, we prefer option B because [理由]. We would love to hear your views on this direction.",
+      "culture_explanation": "正面样例：理解+理由+征求意见，既坚持立场又尊重对方，可放心使用。",
+      "match_keywords": [
+        "prefer to go with option"
+      ],
+      "issue_type": "language"
+    },
+    {
+      "id": "SC-COM-001",
+      "category": "customer_complaint",
+      "name": "客户投诉·情绪化指责",
+      "original_expression": "Your products are terrible. We want a full refund now.",
+      "risk_level": "high",
+      "problem_analysis": "'terrible' 情绪化、主观化；只指责不给证据；'full refund now' 命令式索求。",
+      "recommended_expression": "We have identified quality issues with batch [批号] received on [日期]. This has affected our operations. Could you please investigate and advise on how you plan to resolve this, including compensation options?",
+      "culture_explanation": "专业投诉公式：具体事实 → 影响说明 → 解决请求。给证据、给影响，供应商才愿意配合。",
+      "match_keywords": [
+        "terrible",
+        "full refund"
+      ],
+      "issue_type": "culture"
+    },
+    {
+      "id": "SC-COM-002",
+      "category": "customer_complaint",
+      "name": "客户投诉·货品错误",
+      "original_expression": "We received the wrong items. This is unacceptable.",
+      "risk_level": "medium_high",
+      "problem_analysis": "'unacceptable' 语气强烈但缺少细节（订单号、错误内容、期望解决方案）。",
+      "recommended_expression": "We received items that do not match our order [单号]. We ordered [A] but received [B]. Could you please arrange a replacement or advise on the next steps?",
+      "culture_explanation": "投诉要点：订单号+差异+期望方案，具体化让供应商快速行动；情绪化只会拖延处理。",
+      "match_keywords": [
+        "wrong items",
+        "this is unacceptable"
+      ],
+      "issue_type": "etiquette"
+    },
+    {
+      "id": "SC-COM-003",
+      "category": "customer_complaint",
+      "name": "客户投诉·人身化指责",
+      "original_expression": "The shipment arrived late again. What's wrong with you?",
+      "risk_level": "high",
+      "problem_analysis": "'What's wrong with you?' 是人身攻击式表达，极度冒犯；会让问题解决陷入对抗。",
+      "recommended_expression": "We have experienced delays on recent shipments ([订单号] was due [日期] but arrived on [日期]). This is impacting our schedule. Could we discuss how to prevent this going forward?",
+      "culture_explanation": "对事不对人：用事实（订单号/日期差）代替人身评价，聚焦'如何防止'而非'你们怎么了'。",
+      "match_keywords": [
+        "what's wrong with you",
+        "arrived late again"
+      ],
+      "issue_type": "culture"
+    },
+    {
+      "id": "SC-COM-004",
+      "category": "customer_complaint",
+      "name": "客户投诉·建设性反馈",
+      "original_expression": "We noticed an issue with batch #102. Could you help us resolve it?",
+      "risk_level": "low",
+      "problem_analysis": "表达得体：指出具体批次、请求协助，事实清晰态度合作。（低风险正面样例）",
+      "recommended_expression": "We noticed a quality issue with batch #102 (received on [日期]). Could you please look into it and let us know the corrective plan? We would appreciate your prompt attention.",
+      "culture_explanation": "正面样例：具体事实+礼貌请求，是高效解决问题的标准姿势。",
+      "match_keywords": [
+        "noticed an issue"
+      ],
+      "issue_type": "language"
+    },
+    {
+      "id": "SC-INV-001",
+      "category": "business_invitation",
+      "name": "商务邀请·命令式邀约",
+      "original_expression": "We want you to come to our company next week.",
+      "risk_level": "medium",
+      "problem_analysis": "'We want you to come' 以自我为中心，未考虑对方日程；未提供具体日期、议程与行程安排。",
+      "recommended_expression": "We would be delighted to welcome you to our company. Would [日期1] or [日期2] work for you? We can arrange airport pickup and a full agenda for your visit.",
+      "culture_explanation": "邀请=降低对方成本：给备选时间+接待安排（接机/议程），体现诚意与专业。",
+      "match_keywords": [
+        "want you to come",
+        "come to our company"
+      ],
+      "issue_type": "etiquette"
+    },
+    {
+      "id": "SC-INV-002",
+      "category": "business_invitation",
+      "name": "商务邀请·饭局催促",
+      "original_expression": "Join our dinner on Friday. Don't be late!",
+      "risk_level": "medium",
+      "problem_analysis": "'Don't be late!' 命令式催促；未说明场合、时间地点与着装等必要信息。",
+      "recommended_expression": "We would like to invite you to a welcome dinner on [日期] at [地点] (starting at [时间]). The dress code is [着装]. We look forward to seeing you!",
+      "culture_explanation": "邀请信息要素：时间/地点/场合/着装齐全，对方才能从容安排；'期待见到你'传递热情而非压力。",
+      "match_keywords": [
+        "join our dinner",
+        "don't be late"
+      ],
+      "issue_type": "etiquette"
+    },
+    {
+      "id": "SC-INV-003",
+      "category": "business_invitation",
+      "name": "商务邀请·正式邀约",
+      "original_expression": "We would be honored to invite you to our factory visit on [日期].",
+      "risk_level": "low",
+      "problem_analysis": "表达得体：'would be honored' 体现尊重，'factory visit' 目的明确。（低风险正面样例）",
+      "recommended_expression": "We would be honored to invite you to visit our factory on [日期]. The visit will include [议程安排]. Please let us know if this timing suits you, and we will arrange the details.",
+      "culture_explanation": "正式邀请范式：荣幸+目的+议程+确认请求，庄重而不失亲和。",
+      "match_keywords": [
+        "would be honored to invite"
+      ],
+      "issue_type": "language"
+    },
+    {
+      "id": "SC-INV-004",
+      "category": "business_invitation",
+      "name": "商务邀请·聚会施压",
+      "original_expression": "You should come to our party. Everyone is coming.",
+      "risk_level": "medium_low",
+      "problem_analysis": "'You should' 带轻微说教感；'Everyone is coming' 施加社交压力，对方难以礼貌拒绝。",
+      "recommended_expression": "We are hosting a small gathering on [日期] and would love to have you join us if you are free. No pressure at all—just let us know what works for you.",
+      "culture_explanation": "邀请要给对方'拒绝的自由'（No pressure），社交压力会让重视个人边界的文化群体不适。",
+      "match_keywords": [
+        "you should come",
+        "everyone is coming"
+      ],
+      "issue_type": "culture"
+    },
+    {
+      "id": "SC-MTG-001",
+      "category": "meeting_probe",
+      "name": "会议追问·项目延误",
+      "original_expression": "Please explain why the project is delayed.",
+      "risk_level": "medium_high",
+      "problem_analysis": "① 'explain why' 是质问式追问，隐含'你们有问题'的指责，易让对方进入防御姿态；② 未提供会议背景与协作姿态；③ 在关系导向文化中会被理解为当众追责。",
+      "recommended_expression": "We would appreciate an update on the project timeline. If there are any challenges, we are happy to discuss how we can support.",
+      "culture_explanation": "把'为什么延误'（追责）转为'我们想了解情况、愿意支持'（协作），既推进问题解决又维护关系；质问式表达在日韩、东南亚等文化中尤其容易伤及面子。",
+      "match_keywords": [
+        "explain why",
+        "why the project"
+      ],
+      "issue_type": "etiquette"
+    },
+    {
+      "id": "SC-MTG-002",
+      "category": "meeting_probe",
+      "name": "会议追问·进度施压",
+      "original_expression": "Why is this taking so long?",
+      "risk_level": "medium",
+      "problem_analysis": "① 'Why is this taking so long?' 带不耐烦与指责意味；② 缺少对实际工作量的了解与体谅；③ 会议公开场合下让对方难堪。",
+      "recommended_expression": "Could you share an update on the current progress? We want to understand the timeline better and see how we can help.",
+      "culture_explanation": "公开场合用'分享进展+提供帮助'代替'为什么这么慢'，避免让对方下不来台；这是面子文化中的基本会议礼仪。",
+      "match_keywords": [
+        "why is this",
+        "taking so long"
+      ],
+      "issue_type": "etiquette"
+    }
+  ]
+}

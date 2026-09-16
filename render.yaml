@@ -1,0 +1,21 @@
+# ============================================================
+# 桥通售后 · Render Blueprint 一键部署配置
+# 用法：Render 控制台 → New → Blueprint → 连接 GitHub 仓库
+#       （请在 Render 连接你自己的新 GitHub 仓库）
+#       → 自动读取本文件创建服务，无需手动配置
+# ============================================================
+services:
+  - type: web
+    name: bridge-after-sales-demo
+    runtime: docker          # 使用仓库根目录的 Dockerfile 构建
+    repo: 请在 Render 连接你自己的新 GitHub 仓库
+    plan: free               # 免费实例（闲置 15 分钟休眠，唤醒约 30-60 秒）
+    healthCheckPath: /api/health
+    # Dockerfile 通过 ${PORT:-7860} 读取 Render 注入的 PORT 环境变量
+    envVars:
+      # 可选：启用真实大模型分析（部署后在 Render 控制台手动填入，避免明文入库）
+      # - key: DEEPSEEK_API_KEY
+      #   sync: false
+
+
+
